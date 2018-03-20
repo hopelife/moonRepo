@@ -1,6 +1,6 @@
 ## AWS EC2 활용
 
-### FTP 서버 설정
+### FTP 서버 설정(실패!!! trouble...)
 [아마존 리눅스 AMI에 FTP 서버 설정하기](https://nolboo.kim/blog/2015/11/23/ftp-server-on-amazon-linux-ami/)
 
 #### vsftpd 설치
@@ -277,7 +277,7 @@ $ gem install jekyll bundler
 ```
 
 ```
-ubuntu@ip-172-31-19-231:/var$ sudo chown ubuntu:ubuntu /var
+/var$ sudo chown ubuntu:ubuntu /var
 ```
 
 ```
@@ -288,9 +288,9 @@ $ bundle exec jekyll serve --host=0.0.0.0	//aws!!!
 ```
 
 ```
-ubuntu@ip-172-31-19-231:/var/blog$ which gem
+/var/blog$ which gem
 /home/ubuntu/.rvm/rubies/ruby-2.4.1/bin/gem
-ubuntu@ip-172-31-19-231:/var/blog$ which bundle
+/var/blog$ which bundle
 /home/ubuntu/.rvm/gems/ruby-2.4.1/bin/bundle
 ```
 
@@ -298,10 +298,10 @@ ubuntu@ip-172-31-19-231:/var/blog$ which bundle
 ```
 mkdir /var/blog
 
-ubuntu@ip-172-31-19-231:/var$ sudo chown ubuntu:ubuntu -R /var/blog
-ubuntu@ip-172-31-19-231:/var$
+/var$ sudo chown ubuntu:ubuntu -R /var/blog
+/var$
 
-ubuntu@ip-172-31-19-231:/var$ sudo chown ubuntu:ubuntu /var
+/var$ sudo chown ubuntu:ubuntu /var
 ```
 
 #### git init / remote / pull
@@ -312,17 +312,17 @@ ubuntu@ip-172-31-19-231:/var$ sudo chown ubuntu:ubuntu /var
 /var/blog2$ git remote add blog1 https://github.com/hopelife/hopelife.github.io.git
 /var/blog2$ git pull blog1 master
 
-ubuntu@ip-172-31-19-231:/var/blog2$ ls
+/var/blog2$ ls
 404.html  about.md  _config.yml  Gemfile  Gemfile.lock  index.md  _posts
-ubuntu@ip-172-31-19-231:/var/blog2$ rm *.html
-ubuntu@ip-172-31-19-231:/var/blog2$ rm *.md
-ubuntu@ip-172-31-19-231:/var/blog2$ rm _c*
-ubuntu@ip-172-31-19-231:/var/blog2$ ls
+/var/blog2$ rm *.html
+/var/blog2$ rm *.md
+/var/blog2$ rm _c*
+/var/blog2$ ls
 Gemfile  Gemfile.lock  _posts
-ubuntu@ip-172-31-19-231:/var/blog2$ rm -rf _posts
-ubuntu@ip-172-31-19-231:/var/blog2$ rm -rf .git*
+/var/blog2$ rm -rf _posts
+/var/blog2$ rm -rf .git*
 
-ubuntu@ip-172-31-19-231:/var/blog2$ ls
+/var/blog2$ ls
 Gemfile  Gemfile.lock
 
 
