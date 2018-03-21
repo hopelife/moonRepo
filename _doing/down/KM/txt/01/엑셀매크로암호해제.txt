@@ -1,0 +1,71 @@
+엑셀 매크로 VBA 암호 변경 / 해제
+2016.06.24 15:07
+Posted in PC-Internet by Rutiz 루티
+
+For Excel 2007/2010 (.xlsm) files do following steps:
+
+1. Create a new .xlsm file.
+2. In the VBA part, set a simple password (for instance 'macro').
+3. Save the file and exit.
+4. Change file extention to '.zip', open it by any archiver program.
+5. Find the file: 'vbaProject.bin' (in 'xl' folder).
+6. Extract it from archive.
+7. Open the file you just extracted with a hex editor (for example HxD).
+8. Find and copy the value from parameter DPB (value in quotation mark), example:
+        DPB="282A84CBA1CBA1345FCCB154E20721DE77F7D2378D0EAC90427A22021A46E9CE6F17188A".  (This value generated for 'macro' password. You can use this DPB value to skip steps 1-8)
+
+9. Do steps 4-7 for file with unknown password (file you want to unlock).
+10. Change DBP value in this file on value that you have copied in step 8.
+>>If copied value is shorter than in encrypted file you should populate missing characters with 0 (zero). If value is longer - that is not a problem (paste as it is).
+
+11. Save the 'vbaProject.bin' file and exit from hex editor.
+12. Replace existing 'vbaProject.bin' file with modified one.
+13. Change extention from '.zip' back to '.xlsm'
+14. Now, open the excel file you need to see the VBA code in. The password for the VBA code
+will simply be macro (as in the example I'm showing here).
+
+For those who still using old file format (2003 - .xls) method has less steps:
+
+1. Open .xls file with hex editor (for example HxD).
+2. Find parameter DPB, change value for this parameter by our own. If your value is shorter than value in encrypted file, you should populate missing characters with 0 (zero). If value is longer - that is not a problem (paste as it is).
+
+
+DPB="282A84CBA1CBA1345FCCB154E20721DE77F7D2378D0EAC90427A22021A46E9CE6F17188A".  (This value generated for 'macro' password).
+3. Save changes.
+
+
+
+
+1. VBA암호 설정되어 있는 파일 확장자 변환 (.xlsm -> .zip) 후 압축 해제
+
+2. 파일명 폴더\xl 안에 vbaProject.bin 파일 확인
+
+3. 무료 HEX 편집 프로그램 HXD 에서 vbaProject.bin 파일 열기
+
+4. 검색 DPB
+
+5. HEX 길이가 원본 암호보다 짧으므로 원본의 DPB 길이 만큼 카피 해서 DPB 길이를 맞춤 (~~~____ 까지 카피)
+(변경된 DPB가 더 긴 경우는 그냥 복사해도 상관 없다고 함)
+
+DPB="0C0EA03CA0DFBDDFBD2043E0BDCF8E680D181DEF399D718AE74EFDF821A1DB442F336BEA56F6"  	/ 모르는 암호로 설정된 DPB
+
+DPB="30329CC3B9C3B93C47C4B9828A224AE66C739AE181084A2809927C8316325BF0A7B496F6"____      / macro 로 암호 변경된 DPB
+
+
+6. ____부분의 HEX 값을 00 으로 변경
+
+7. 저장 후 압축
+
+8. 확장자 변경 .zip -> .xlsm
+
+9. 실행
+
+10. ALT + F11 눌러서 파일 암호 확인(macro)
+
+
+참조 : http://lbeliarl.blogspot.kr/
+
+
+
+
+
