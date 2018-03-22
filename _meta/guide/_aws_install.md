@@ -3,6 +3,58 @@
 
 ### SSH 접속(putty)
 
+#### ROOT 계정 활성화
+
+```
+$ sudo passwd root
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+```
+
+#### ubuntu(최초 계정) 암호 설정
+
+#### 계정 만들기
+
+```
+~$ sudo su
+
+$ adduser aws_ftp
+Adding user `aws_ftp' ...
+Adding new group `aws_ftp' (1001) ...
+Adding new user `aws_ftp' (1001) with group `aws_ftp' ...
+Creating home directory `/home/aws_ftp' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+Sorry, passwords do not match
+passwd: Authentication token manipulation error
+passwd: password unchanged
+Try again? [y/N] y
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for aws_ftp
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] y
+```
+
+
+### 사용자 변경
+```
+su - [유저명]
+
+
+$ su
+# su - ubuntu
+
+```
+
 
 
 ### check directory
@@ -36,6 +88,16 @@ $ git version
 git version 2.7.4
 ```
 
+```
+$ git config --global user.name "hopelife"
+$ git config --global user.email deverlife@gmail.com
+
+
+$ git config --global user.name <user_name>
+$ git config --global user.email <user_email>
+```
+
+
 #### nano
 
 ```
@@ -48,6 +110,15 @@ GNU nano, version 2.5.3
 ```
 $ python3 --version
 Python 3.5.2
+```
+
+#### curl
+
+```
+$ curl -V
+curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp smb smbs smtp smtps telnet tftp
+Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP UnixSockets
 ```
 
 ### install applications
@@ -73,7 +144,226 @@ v4.2.6
 
 ```
 
+
+#### vsftpd
+
+##### install
+```
+$ sudo apt-get update
+$ sudo apt-get install global vsftpd
+```
+
+```
+~$ vsftpd -v
+vsftpd: version 3.0.3
+~$ whereis vsftpd
+vsftpd: /usr/sbin/vsftpd /etc/vsftpd.conf /usr/share/man/man8/vsftpd.8.gz
+```
+
+
+##### add user
+
+```
+$ sudo vi /etc/ftpusers
+```
+
+```
+root@ip-172-31-41-147:~# sudo adduser aws_ftp
+Adding user `aws_ftp' ...
+Adding new group `aws_ftp' (1002) ...
+Adding new user `aws_ftp' (1002) with group `aws_ftp' ...
+Creating home directory `/home/aws_ftp' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for web
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] y
+
+```
+
+```
+$ sudo vi /etc/ftpusers
+```
+
+```
+aws_ftp <<추가>>
+```
+
+
+#### EC2 인스턴스 인바운드(Inbound) 추가
+[AWS EC2 관리 콘솔](https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Instances:sort=instanceId)
+- AWS EC2 관리 콘솔 > 왼쪽 내비게이션 메뉴 > 보안 그룹(Security Groups) > Inbound 탭 선택
+- 포트 추가시 '소스: 0.0.0.0/0'로 설정
+- 80 포트 추가(http용)
+- 443 포트 추가(https용)
+- 20-21 범위 포트 추가(ftp용)
+- 1024-1048 포트 범위 추가(ftp passive mode용)
+- 4000 포트 추가(jekyll server용)
+
+
+#### VSFTP 설정
+- 설정 파일 열기
+
+```
+$ sudo vi /etc/vsftpd.conf
+```
+
+
+```
+//변경
+#local_enable=YES -> local_enable=YES
+
+#write_enable=YES -> write_enable=YES
+
+#utf8_filesystem=YES -> utf8_filesystem=YES
+
+#local_umask=022 -> local_umask=022
+
+pam_service_name=vsftpd -> pam_service_name=ftp
+
+
+
+//추가
+#
+# userlist //user added
+userlist_enable=YES
+userlist_file=/etc/ftpusers
+userlist_denystem=YES=NO
+
+
+#
+# passive mode // user add!!!
+pasv_enable=YES
+pasv_min_port=1024
+pasv_max_port=1048
+pasv_address=13.230.8.128
+
+#
+# ftp root directory //user add!!!
+local_root=/home/ubuntu
+
+```
+
+
+
+##### vsftpd 재시작
+```
+// 재시작1
+sudo /etc/init.d/vsftpd restart
+
+// 재시작2
+$ sudo service vsftpd restart
+```
+
+
+##### filezilla 접속
+!!! 현재 root로만 접속 가능 !!!
+
+
+
+#### ruby
+
+```
+
+```
+
+#### bundler
+
+
 #### jekyll
+
+
+```
+//@@@curl이 설치되지 않은 경우
+$ sudo apt-get install curl
+
+
+$ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+
+//rvm 설치
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ source /home/ubuntu/.rvm/scripts/rvm
+
+$ source /home/<user_name>/.rvm/scripts/rvm
+
+
+//ruby 설치
+$ rvm install ruby
+
+
+//@@@nodejs가 설치되지 않은 경우
+$ sudo apt-get install nodejs
+
+//jekyll 설치
+$ gem install jekyll
+
+//bundler 설치
+$ gem install bundler
+
+_$ gem install jekyll bundler
+```
+
+
+```
+~$ mkdir www
+~$ cd www
+```
+
+```
+$ jekyll new hopelife.github.io
+$ cd hopelife.github.io
+//host:0.0.0.0 : aws Inbound설정
+//--detach: 터미널 종료후에도 jekyll server 종료안됨
+$ bundle exec jekyll serve --host=0.0.0.0 --detach
+
+
+$ jekyll new <site_name>
+$ cd <site_name>
+//host:0.0.0.0 : aws Inbound설정
+//--detach: 터미널 종료후에도 jekyll server 종료안됨
+$ bundle exec jekyll serve --host=0.0.0.0 --detach
+
+//stop jekyll server
+Server detached with pid '2036'. Run `pkill -f jekyll' or `kill -9 2036' to stop the server.
+$ pkill -f jekyll
+```
+
+
+#### connect jekyll server in browser
+
+- webbrowser open & type url
+
+```
+//connect jekyll server in browser
+
+http://13.230.8.128:4000/
+```
+
+
+#### create github repository for jekyll blog
+- github account: hopelife
+[gitub hopelife](https://github.com/hopelife)
+- 상단 우측 메뉴 > New repository
+- 'Create a new repository' 페이지 > Repository Name -> hopelife.github.io
+
+
+```
+echo "# hopelife.github.io" >> README.md
+git init
+git add *
+git commit -m "first commit"
+git remote add hopelife https://github.com/hopelife/hopelife.github.io.git
+git push -u hopelife master
+```
+
+
 
 
 
