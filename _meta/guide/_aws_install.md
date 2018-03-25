@@ -169,9 +169,9 @@ Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL 
 - check version
 
 ```
-$ node -v
-The program 'node' is currently not installed. You can install it by typing:
-sudo apt install nodejs-legacy
+$ nodejs -v
+The program 'nodejs' is currently not installed. You can install it by typing:
+sudo apt install nodejs
 ```
 
 - install
@@ -180,9 +180,6 @@ sudo apt install nodejs-legacy
 $ sudo apt-get update
 $ sudo apt install global nodejs
 
-~$ node -v
-The program 'node' is currently not installed. You can install it by typing:
-sudo apt install nodejs-legacy
 
 ~$ nodejs -v
 v4.2.6
@@ -323,6 +320,7 @@ $ gem install jekyll
 //bundler 설치
 $ gem install bundler
 
+//jekyll, bundler 설치
 _$ gem install jekyll bundler
 ```
 
@@ -382,4 +380,34 @@ git add *
 git commit -m "first commit"
 git remote add hopelife https://github.com/hopelife/hopelife.github.io.git
 git push -u hopelife master
+```
+
+
+### tensorflow
+
+```
+$ sudo apt-get install python3-pip
+$ sudo -H pip3 install --upgrade pip
+$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.11.0rc0-py3-none-any.whl
+$ sudo -H pip3 install --upgrade $TF_BINARY_URL
+
+$ python3
+
+>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+Hello, TensorFlow!
+
+
+$ sudo chmod -R 666 /usr/lib/python3.5
+
+$ pip3 install --upgrade protobuf
+
+//for python2
+$ sudo apt-get install python-pip python-dev
+$ pip install --upgrade pip
+$ sudo -H pip install --upgrade $TF_BINARY_URL
+
+
 ```
