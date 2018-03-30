@@ -23,8 +23,8 @@ sibling: ['Install Jekyll on Linux', 'Install Jekyll on Mac(OS X)']
 
 Jekyll은 루비 기반으로 돌아갑니다. 그래서 Ruby가 설치된 장비가 필요합니다. 그리고 syntax highlighting 을 사용하기 위해서 Pygments가 있어야 합니다. Pygments는 Python 기반으로 돌아가기 때문에 Python이 설치되어 있어야 하고요. 
 그럼 본격적으로 설치를 해보겠습니다. 
- 
- 
+
+
 ## 루비(Ruby) 설치 
 
 ### 루비(Ruby) 설치 
@@ -96,7 +96,7 @@ gem install wdm
 gem install kramdown
 ```
 
- 
+
 ## 제킬(jekyll) 사이트 생성 
 
 ```bash

@@ -13,7 +13,7 @@
 
 #### root 계정 활성화
 
-```bash
+```shell
 $ sudo passwd root
 
 Enter new UNIX password:
@@ -23,7 +23,7 @@ passwd: password updated successfully
 
 #### ubuntu(최초 계정) 암호 설정
 
-```bash
+```shell
 ~$ sudo su
 
 root# passwd ubuntu
@@ -86,7 +86,7 @@ su - <유저명>
 
 ### check directory
 
-```bash
+```shell
 $ cd /
 $ ls
 bin   etc         lib         media  proc  sbin  sys  var
@@ -241,7 +241,7 @@ root
 #### vsftpd.conf 편집
 - 설정 파일 열기
 
-```Shell
+```shell
 $ sudo vi /etc/vsftpd.conf
 ```
 
@@ -282,7 +282,7 @@ local_root=/home/ubuntu
 
 
 ##### vsftpd 재시작
-```Shell
+```shell
 // 재시작1
 sudo /etc/init.d/vsftpd restart
 
@@ -295,7 +295,7 @@ $ sudo service vsftpd restart
 
 - install
 
-```Shell
+```shell
 //@@@curl이 설치되지 않은 경우
 $ sudo apt-get install curl
 
@@ -326,14 +326,14 @@ _$ gem install jekyll bundler
 
 - web server directory 생성
 
-```Shell
+```shell
 ~$ mkdir www
 ~$ cd www
 ```
 
 - jekyll server 시작
 
-```Shell
+```shell
 $ jekyll new hopelife.github.io
 $ cd hopelife.github.io
 //host:0.0.0.0 : aws Inbound설정
@@ -373,7 +373,7 @@ http://13.230.8.128:4000/
 
 ##### init & push
 
-```Shell
+```shell
 echo "# hopelife.github.io" >> README.md
 git init
 git add *
@@ -385,7 +385,7 @@ git push -u hopelife master
 
 ### tensorflow
 
-```Shell
+```shell
 $ sudo apt-get install python3-pip
 $ sudo -H pip3 install --upgrade pip
 $ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.11.0rc0-py3-none-any.whl
