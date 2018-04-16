@@ -222,12 +222,12 @@
 
 ## 분수, 행렬, 여러행
 
-| 기능 | 문법 | 문법 |
+| 기능 | 문법 | 문서에 나타나는 식 |
 |---|---|---|
 | 분수 | ``\frac{2}{4} or {2 \over 4}`` | $$ \frac{2}{4} or {2 \over 4} $$ |
 | 이항 계수 | ``{n \choose k}`` | $$ {n \choose k} $$ |
 | 행렬 | ``\begin{pmatrix} x & y \\ z & v \end{pmatrix}`` | $$ \begin{pmatrix} x & y \\ z & v \end{pmatrix} $$ |
-| | ``\begin{bmatrix} 0 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 0 \end{bmatrix}`` | $$ \begin{bmatrix} 0 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 0 \end{bmatrix}` $$ |
+| | ``\begin{bmatrix} 0 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 0 \end{bmatrix}`` | $$ \begin{bmatrix} 0 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 0 \end{bmatrix} $$ |
 | | ``\begin{Bmatrix} x & y \\ z & v \end{Bmatrix}`` | $$ \begin{Bmatrix} x & y \\ z & v \end{Bmatrix} $$ |
 | | ``\begin{vmatrix} x & y \\ z & v \end{vmatrix}`` | $$ \begin{vmatrix} x & y \\ z & v \end{vmatrix} $$ |
 | | ``\begin{Vmatrix} x & y \\ z & v \end{Vmatrix}`` | $$ \begin{Vmatrix} x & y \\ z & v \end{Vmatrix} $$ |
@@ -239,10 +239,10 @@
 
 ### 그리스어
 
-| ``\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta`` | $$ \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta $$ |
+| ``\alpha \beta \gamma \delta \epsilon \zeta \eta \theta`` | $$ \alpha \beta \gamma \delta \epsilon \zeta \eta \theta $$ |
 |---|---|
-| ``\Iota \Kappa \Lambda \Mu \Nu \Xi \Pi \Rho`` | $$ \Iota \Kappa \Lambda \Mu \Nu \Xi \Pi \Rho $$ |
-| ``\Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega`` | $$ \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega $$ |
+| ``\iota \kappa \lambda \mu \nu \xi \pi \rho`` | $$ \iota \kappa \lambda \mu \nu \xi \pi \rho $$ |
+| ``\sigma \tau \upsilon \phi \chi \psi \omega`` | $$ \sigma \tau \upsilon \phi \chi \psi \omega $$ |
 | ``\alpha \beta \gamma \delta \epsilon \zeta \eta \theta`` | $$ \alpha \beta \gamma \delta \epsilon \zeta \eta \theta $$ |
 | ``\iota \kappa \lambda \mu \nu \xi \pi \rho`` | $$ \iota \kappa \lambda \mu \nu \xi \pi \rho $$ |
 | ``\sigma \tau \upsilon \phi \chi \psi \omega`` | $$ \sigma \tau \upsilon \phi \chi \psi \omega $$ |
@@ -275,10 +275,10 @@
 
 ### 볼드체 그리스어
 
-| ``\boldsymbol{\Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta}`` | $$ \boldsymbol{\Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta} $$ |
+| ``\boldsymbol{\alpha\beta\gamma\delta\epsilon\zeta\eta\theta}`` | $$ \boldsymbol{\alpha\beta\gamma\delta\epsilon\zeta\eta\theta} $$ |
 |---|---|
-| ``\boldsymbol{\Iota\Kappa\Lambda\Mu\Nu\Xi\Pi\Rho}`` | $$ \boldsymbol{\Iota\Kappa\Lambda\Mu\Nu\Xi\Pi\Rho} $$ |
-| ``\boldsymbol{\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega}`` | $$ \boldsymbol{\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega} $$ |
+| ``\boldsymbol{\iota\kappa\lambda\mu\nu\xi\pi\rho}`` | $$ \boldsymbol{\iota\kappa\lambda\mu\nu\xi\pi\rho} $$ |
+| ``\boldsymbol{\sigma\tau\upsilon\phi\chi\psi\omega}`` | $$ \boldsymbol{\sigma\tau\upsilon\phi\chi\psi\omega} $$ |
 | ``\boldsymbol{\alpha\beta\gamma\delta\epsilon\zeta\eta\theta}`` | $$ \boldsymbol{\alpha\beta\gamma\delta\epsilon\zeta\eta\theta} $$ |
 | ``\boldsymbol{\iota\kappa\lambda\mu\nu\xi\pi\rho}`` | $$ \boldsymbol{\iota\kappa\lambda\mu\nu\xi\pi\rho} $$ |
 | ``\boldsymbol{\sigma\tau\upsilon\phi\chi\psi\omega}`` | $$ \boldsymbol{\sigma\tau\upsilon\phi\chi\psi\omega} $$ |
@@ -294,10 +294,10 @@
 
 ### 기울임체 그리스어
 
-| ``\mathit{\Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta}`` | $$ \mathit{\Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta} $$ |
+| ``\mathit{\alpha\beta\gamma\delta\epsilon\zeta\eta\theta}`` | $$ \mathit{\alpha\beta\gamma\delta\epsilon\zeta\eta\theta} $$ |
 |---|---|
-| ``\mathit{\Iota\Kappa\Lambda\Mu\Nu\Xi\Pi\Rho}`` | $$ \mathit{\Iota\Kappa\Lambda\Mu\Nu\Xi\Pi\Rho} $$ |
-| ``\mathit{\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega}`` | $$ \mathit{\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega} $$ |
+| ``\mathit{\iota\kappa\lambda\mu\nu\xi\pi\rho}`` | $$ \mathit{\iota\kappa\lambda\mu\nu\xi\pi\rho} $$ |
+| ``\mathit{\sigma\tau\upsilon\phi\chi\psi\omega}`` | $$ \mathit{\sigma\tau\upsilon\phi\chi\psi\omega} $$ |
 
 ### 로만체
 
@@ -321,10 +321,10 @@
 
 ### 산세리프체 그리스어
 
-| ``\mathsf{\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta}`` | $$ \mathsf{\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta} $$ |
+| ``\mathsf{\alpha \beta \gamma \delta \epsilon \zeta \eta \theta}`` | $$ \mathsf{\alpha \beta \gamma \delta \epsilon \zeta \eta \theta} $$ |
 |---|---|
-| ``\mathsf{\Iota \Kappa \Lambda \Mu \Nu \Xi \Pi \Rho}`` | $$ \mathsf{\Iota \Kappa \Lambda \Mu \Nu \Xi \Pi \Rho} $$ |
-| ``\mathsf{\Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega}`` | $$ \mathsf{\Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega} $$ |
+| ``\mathsf{\iota \kappa \lambda \mu \nu \xi \pi \rho}`` | $$ \mathsf{\iota \kappa \lambda \mu \nu \xi \pi \rho} $$ |
+| ``\mathsf{\sigma \tau \upsilon \phi \chi \psi \omega}`` | $$ \mathsf{\sigma \tau \upsilon \phi \chi \psi \omega} $$ |
 
 ### 흘림체
 
