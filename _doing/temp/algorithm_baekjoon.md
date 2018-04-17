@@ -1652,6 +1652,40 @@ TJU Online Judge
 
 
 ```c++
+#include <iostream>
+
+int main() {
+	int T, N, i, j, k;
+	//int T, N, i, j, k, score[1001] = {0, };
+
+	scanf("%d", &T);
+
+	for(i = 0; i < T; i++){
+		int sum = 0, cnt = 0;
+		double avg = 0.0;
+
+		scanf("%d", &N);
+		int* score = new int[N];
+
+		for(j = 0; j < N; j++){
+			scanf("%d", &score[j]);
+			sum += score[j];
+		}
+
+		avg = (double)sum / (double)N;
+
+		for(k = 0; k < N; k++){
+			if(avg < score[k])
+				cnt++;
+		}
+
+		avg = (double)cnt / (double)N;
+
+		printf("%.3lf%\n", avg * 100);
+	}
+
+	return 0;
+}
 
 ```
 
@@ -1689,7 +1723,26 @@ N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작
 
 
 ```c++
+#include <iostream>
+#include <cmath>
 
+int main() {
+	int N, M, c=0;
+	scanf("%d", &N);
+
+	M = N;
+
+	while(1) {
+		M = 10*(M%10) + int((floor(M/10) + M%10))%10;
+		c++;
+		//printf("N: %d M: %d c: %d\n",N, M, c);
+		if (M == N) {
+			printf("%d",c);
+			return 0;
+		}
+	}
+
+}
 ```
 
 
@@ -1762,8 +1815,36 @@ HDU Online Judge
 
 
 
-```swift
+```c++
+#include <iostream>
 
+int main(){
+  //int a, b, c, d, res, sum=0;
+  int a, b, c, d, res;
+  int p[10000] = {0,};
+
+  for(int num=1; num<10000; num++){
+    //find self number
+    a = num / 1000;
+    b = (num / 100) % 10;
+    c = (num / 10) % 10;
+    d = num % 10;
+    res = a + b + c + d + num;
+
+    if(res < 10000){
+      p[res] = 1;
+    }
+
+    //make sum
+    if(p[num] == 0){
+      printf("%u\n", num);
+      //sum += num;
+    }
+  }
+  //printf("\nThe sum is %d\n", sum);
+
+  return 0;
+}
 ```
 
 
@@ -1792,8 +1873,34 @@ HDU Online Judge
 메모
 
 
-```swift
+```c++
+#include <iostream>
 
+int main() {
+	int N, a, b, c, cnt=99;
+	scanf("%d", &N);
+
+	if (N<100) {
+		printf("%d", N);
+		return 0;
+	} else if (N==100) {
+		printf("%d", 99);
+		return 0;
+	}
+
+  for(int i=100; i<N+1; i++){
+    a = i / 100;
+    b = (i / 10) % 10;
+    c = i % 10;
+
+    if(a - b == b - c){
+      cnt++;
+    }
+  }
+  printf("%d", cnt);
+
+  return 0;
+}
 ```
 
 
@@ -1846,8 +1953,63 @@ HDU Online Judge
 
 
 
-```swift
+```c++
+#include<iostream>
+using namespace std;
 
+void triangle(int n, int x, int y);
+char arr[3072][6144];
+
+int main(void) {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+
+  int n, i, j;
+
+  cin >> n;  //N입력
+ 
+  //배열 초기화
+  //각 높이의 행의 요소들을 공백으로, 행의 끝부분만 null로 초기화한다.
+  for (i = 0; i<n; i++) {
+    for (j = 0; j<2 * n; j++){
+      if (j == 2 * n - 1)
+        arr[i][j] = '\0';
+      else
+        arr[i][j] = ' ';
+    }
+  }
+
+  triangle(n, n - 1, 0);//삼각형의 높이와, 삼각형 맨 위 꼭지점 좌표를 매개변수로 넘긴다.
+
+  //삼각형 출력
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < 2 * n - 1; j++) {
+      cout << arr[i][j];
+    }
+    cout << "\n";
+  }
+
+  return 0;
+}
+
+void triangle(int n, int x, int y) {
+  if (n == 3) { //높이가 3이라면 삼각형을 만들어 출력한다.
+    //삼각형을 그린다.
+    arr[y][x] = '*';
+    arr[y + 1][x - 1] = '*';
+    arr[y + 1][x + 1] = '*';
+    arr[y + 2][x - 2] = '*';
+    arr[y + 2][x - 1] = '*';
+    arr[y + 2][x] = '*';
+    arr[y + 2][x + 1] = '*';
+    arr[y + 2][x + 2] = '*';
+    return;
+  }
+  triangle(n / 2, x, y); // 위의 삼각형 높이와 맨 위 꼭대기 좌표를 보낸다. 
+  triangle(n / 2, x - (n / 2), y + (n / 2)); // 왼쪽 하단 삼각형 높이와 맨 위 꼭대기 좌표를 보낸다.
+  triangle(n / 2, x + (n / 2), y + (n / 2)); // 오른쪽 하단 삼각형 높이와 맨 위 꼭대기 좌표를 보낸다.
+}
 ```
 
 
@@ -1882,8 +2044,40 @@ The Curious Case of Benjamin Button
 메모
 
 
-```swift
+```c++
+//cin.getline
+# include <iostream>
 
+using namespace std;
+
+int main() {
+  for (int i = 0; i < 3; i++) {
+    char string[1000];
+    cin.getline(string,1000,'\n');
+    cout << string << endl;
+  }
+}
+
+
+//scanf("%[^\n]", str)
+#include <iostream>
+
+int main() {
+  int cnt = 1;
+  int N = 10000;
+  char s[N];
+  scanf("%[^\n]", s);
+
+  for(int i=0;i<N;i++) {
+  	if (s[i] == ' ') {
+  		cnt++;
+  	} else if (s[i] == '\0') {
+  		printf("%d", cnt);
+  		return 0;
+  	}
+  	//printf("%c", s[i]);
+  }
+}
 ```
 
 
