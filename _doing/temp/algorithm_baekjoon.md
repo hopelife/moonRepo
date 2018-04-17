@@ -1904,7 +1904,7 @@ int main() {
 ```
 
 
-### 2448 별찍기 - 11
+### 2448 별찍기 - 11 [#]
 그리고자 하는 삼각형의 크기와 위치에 대한 함수를 정의해 재귀적으로 문제를 해결해봅니다
 
 별찍기 - 11
@@ -1968,7 +1968,7 @@ int main(void) {
   int n, i, j;
 
   cin >> n;  //N입력
- 
+
   //배열 초기화
   //각 높이의 행의 요소들을 공백으로, 행의 끝부분만 null로 초기화한다.
   for (i = 0; i<n; i++) {
@@ -2006,7 +2006,7 @@ void triangle(int n, int x, int y) {
     arr[y + 2][x + 2] = '*';
     return;
   }
-  triangle(n / 2, x, y); // 위의 삼각형 높이와 맨 위 꼭대기 좌표를 보낸다. 
+  triangle(n / 2, x, y); // 위의 삼각형 높이와 맨 위 꼭대기 좌표를 보낸다.
   triangle(n / 2, x - (n / 2), y + (n / 2)); // 왼쪽 하단 삼각형 높이와 맨 위 꼭대기 좌표를 보낸다.
   triangle(n / 2, x + (n / 2), y + (n / 2)); // 오른쪽 하단 삼각형 높이와 맨 위 꼭대기 좌표를 보낸다.
 }
@@ -2045,6 +2045,32 @@ The Curious Case of Benjamin Button
 
 
 ```c++
+//scanf("%[^\n]", str)
+#include <iostream>
+
+int main() {
+  int cnt = 1;
+  int N = 1000002;
+  char s[N];
+  scanf("%[^\n]", s);
+
+  for(int i=0;i<N;i++) {
+    if (s[i] == ' ' && i != N-1) {
+      cnt++;
+    } else if (s[i] == '\0' || i == N-1) {
+      if (s[0] == ' ') {
+        cnt--;
+      }
+      if (s[i-1] == ' ') {
+        cnt--;
+      }
+
+      printf("%d", cnt);
+      return 0;
+    }
+  }
+}
+
 //cin.getline
 # include <iostream>
 
@@ -2059,25 +2085,6 @@ int main() {
 }
 
 
-//scanf("%[^\n]", str)
-#include <iostream>
-
-int main() {
-  int cnt = 1;
-  int N = 10000;
-  char s[N];
-  scanf("%[^\n]", s);
-
-  for(int i=0;i<N;i++) {
-  	if (s[i] == ' ') {
-  		cnt++;
-  	} else if (s[i] == '\0') {
-  		printf("%d", cnt);
-  		return 0;
-  	}
-  	//printf("%c", s[i]);
-  }
-}
 ```
 
 
@@ -2126,8 +2133,37 @@ Olympiad > 한국정보올림피아드시․도지역본선 > 지역본선 2006 
 메모
 
 
-```swift
+```c++
+#include <iostream>
+#include <cmath>
+using namespace std;
 
+int main() {
+  int a, b, c, n, p, q;
+  int d[10] = {0,};
+
+  scanf("%d\n%d\n%d", &a, &b, &c);
+  n = a*b*c;
+
+  if (n < 10000000) {
+    p = 7;
+  } else if (n < 100000000) {
+    p = 8;
+  } else {
+    p = 9;
+  }
+
+  for (int i = 0; i < p; i++) {
+    q = pow(10, i);
+    d[n/q%10]++;
+  }
+
+  for (int i = 0; i < 10; i++) {
+    printf("%d\n", d[i]);
+  }
+
+  return 0;
+}
 ```
 
 
@@ -2171,17 +2207,51 @@ ACM-ICPC Live Archive
 TJU Online Judge
 메모
 
-```swift
+@@@
+```c++
+#include <iostream>
+using namespace std;
 
+int main() {
+  // n: 입력 줄수, ts: 전체 점수, ps: 부분 점수, M: 배열 최대 크기
+  int n, ts = 0, ps = 0, M = 81;
+  char* ox = new char[M];
+
+  fill_n(ox, M, 'E');  //배열 초기화
+  scanf("%d", &n);
+
+  for(int i = 0; i < n; i++) {
+    scanf("%s", ox);
+
+    for(int j = 0; j < M; j++) {
+
+      if (ox[j] == 'O') {
+        ps++;
+        ts += ps;
+      } else if (ox[j] == 'X'){
+        ps = 0;
+      //} else if (ox[j] == 'E' || ox[j] == '\0') {
+      } else {
+        break;
+      }
+    }
+
+    printf("%d\n", ts);
+
+    // 변수, 배열 초기화
+    ts = 0;
+    ps = 0;
+    fill_n(ox, M, 'E');
+  }
+
+  return 0;
+}
 ```
 
 
-### 2920	음계
+### 2920	음계 [#]
 주어진 배열이 오름차순인지 아닌지 판단하는 문제
 
-음계
-시간 제한 메모리 제한  제출  정답  맞은 사람 정답 비율
-1 초 128 MB  10441 6025  5417  59.956%
 문제
 다장조는 c d e f g a b C, 총 8개 음으로 이루어져있다. 이 문제에서 8개 음은 다음과 같이 숫자로 바꾸어 표현한다. c는 1로, d는 2로, ..., C를 8로 바꾼다.
 
@@ -2219,17 +2289,85 @@ Contest > Croatian Open Competition in Informatics > COCI 2009/2010 > Contest #1
 
 메모
 
-```swift
+```c++
+#include <iostream>
+using namespace std;
 
+int main() {
+  int M = 8;
+  int* a = new int[M];
+  string scale = "mixed";
+
+  for(int i = 0; i < M; i++) {
+    scanf("%d", &a[i]);
+  }
+
+  if (a[0]==1) {
+    scale = "ascending";
+  } else if (a[0]==8) {
+    scale = "descending";
+  } else {
+    printf("%s", "mixed");
+    return 0;
+  }
+
+  for(int i = 0; i < M; i++) {
+    if (scale == "ascending" && a[i] == i+1) {
+      scale = "ascending";
+    } else if (scale == "descending" && a[i] == M - i) {
+      scale = "descending";
+    } else {
+      printf("%s", "mixed");
+      return 0;
+    }
+  }
+
+  printf("%s", scale.c_str());
+  return 0;
+}
+
+// cin, cout, continue, break, define, enum
+#include <iostream>
+#include <cstdio>
+#define LEN 8
+enum {ASC=0, DESC, MIXED};
+using namespace std;
+
+int main(void){
+  int result=0;
+  int arr[LEN];
+
+  for(int i=0; i<LEN; i++){
+    scanf("%d", &arr[i]);
+  }
+
+  //초기 값 정해주기
+  if(arr[1]-arr[0] == 1) result = ASC;
+  else if(arr[1]-arr[0] == -1) result = DESC;
+  else result = MIXED;
+
+  //이전 값과 같은지 아닌지
+  for(int i=1; i<LEN-1; i++){
+    if(arr[i+1]-arr[i] == 1 && result == ASC) continue;
+    if(arr[i+1]-arr[i] == -1 && result == DESC) continue;
+
+    result = MIXED;
+    break;
+  }
+
+
+  if(result == ASC) cout << "ascending";
+  else if(result == DESC) cout << "descending";
+  else cout << "mixed";
+
+  return 0;
+}
 ```
 
 
 ### 10039	평균 점수
 조건에 따라 주어진 배열의 평균을 구하는 문제
 
-평균 점수
-시간 제한 메모리 제한  제출  정답  맞은 사람 정답 비율
-1 초 128 MB  10611 7659  6945  73.859%
 문제
 상현이가 가르치는 아이폰 앱 개발 수업의 수강생은 원섭, 세희, 상근, 숭, 강수이다.
 
@@ -2266,46 +2404,237 @@ Olympiad > 일본정보올림피아드 예선 > JOI 2014 예선 1번
 메모
 
 
-```swift
+```c++
+#include <iostream>
+#define N 5
 
+int main() {
+  int score[N];
+  int sum = 0;
+
+  for(int i = 0; i < N; i++) {
+    scanf("%d", score[i]);
+  }
+
+  for(int i = 0; i < N; i++) {
+    if (score[i] > 40) {
+      sum += score[i];
+    } else {
+      sum += 40;
+    }
+  }
+
+  print("%u", int(sum/N));
+}
 ```
 
 
 ## 문자열 사용하기
 문자열을 다루는 문제들을 해결해 봅니다
 
-###
-
-
-```swift
-
-```
-
 
 ### 11654	아스키 코드
 알파벳의 아스키 코드 값을 출력해봅니다
 
+문제
+알파벳 소문자, 대문자, 숫자 0-9중 하나가 주어졌을 때, 주어진 글자의 아스키 코드값을 출력하는 프로그램을 작성하시오.
 
-```swift
+입력
+알파벳 소문자, 대문자, 숫자 0-9 중 하나가 첫째 줄에 주어진다.
 
+출력
+입력으로 주어진 글자의 아스키 코드 값을 출력한다.
+
+예제 입력 1
+A
+예제 출력 1
+65
+예제 입력 2
+C
+예제 출력 2
+67
+예제 입력 3
+0
+예제 출력 3
+48
+
+힌트
+출처
+문제를 만든 사람: baekjoon
+문제의 오타를 찾은 사람: eric00513
+알고리즘 분류
+보기
+
+메모
+
+
+```c++
+#include <iostream>
+
+int main() {
+  char c;
+
+  scanf("%c", &c);
+  printf("%d", (int)c);
+}
 ```
 
 
 ### 10809	알파벳 찾기
 한 단어에서 각 알파벳이 처음 등장하는 위치를 찾아봅니다
 
+문제
+알파벳 소문자로만 이루어진 단어 S가 주어진다. 각각의 알파벳에 대해서, 단어에 포함되어 있는 경우에는 처음 등장하는 위치를, 포함되어 있지 않은 경우에는 -1을 출력하는 프로그램을 작성하시오.
 
-```swift
+입력
+첫째 줄에 단어 S가 주어진다. 단어의 길이는 100을 넘지 않으며, 알파벳 소문자로만 이루어져 있다.
 
+출력
+각각의 알파벳에 대해서, a가 처음 등장하는 위치, b가 처음 등장하는 위치, ... z가 처음 등장하는 위치를 공백으로 구분해서 출력한다.
+만약, 어떤 알파벳이 단어에 포함되어 있지 않다면 -1을 출력한다. 단어의 첫 번째 글자는 0번째 위치이고, 두 번째 글자는 1번째 위치이다.
+
+예제 입력 1
+baekjoon
+예제 출력 1
+1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+힌트
+출처
+문제를 만든 사람: baekjoon
+알고리즘 분류
+보기
+
+메모
+
+
+```c++
+#include <iostream>
+#include <string>
+#define N 100
+#define M 26
+
+using namespace std;
+
+int main() {
+  char s[N];
+  char a = 'a';
+  int m[M];
+
+  fill_n(m, M, -1);  //배열 초기화
+
+  scanf("%s", s);
+
+  for(int i = 0; i < N; i++) {
+    int p = (int)s[i] - (int)a;
+
+    if (s[i] != '\0') {
+      if (m[p] == -1)
+        m[p] = i;
+      continue;
+    } else {
+      break;
+    }
+  }
+
+  for(int i = 0; i < M; i++) {
+    printf("%d ", m[i]);
+  }
+}
 ```
 
 
 ### 2675	문자열 반복
 문자열의 각 문자를 반복하여 출력해봅니다
 
+문제
+문자열 S를 입력받은 후에, 각 문자를 R번 반복해 새 문자열 T를 만든 후 출력하는 프로그램을 작성하시오.
 
-```swift
+다시 설명하자면, 첫 번째 문자를 R번 반복하고, 두 번째 문자를 R번 반복하는 식으로 T를 만들면 된다. S에는 QR Code "alphanumeric" 문자만 들어있다.
 
+QR Code "alphanumeric" 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ$%*+-./: 이다.
+
+입력
+첫째 줄에 테스트 케이스의 개수 T(1 <= T <= 1,000)가 주어진다. 각 테스트 케이스는  반복 횟수 R(1 <= R <= 8), 문자열 S가 공백으로 구분되어 주어진다. S의 길이는 적어도 1이며, 20글자를 넘지 않는다.
+
+출력
+각 테스트 케이스에 대해 T를 출력한다.
+
+예제 입력 1
+2
+3 ABC
+5 /HTP
+예제 출력 1
+AAABBBCCC
+/////HHHHHTTTTTPPPPP
+힌트
+출처
+ACM-ICPC > Regionals > North America > Greater New York Region > 2011 Greater New York Programming Contest A번
+
+문제를 번역한 사람: baekjoon
+잘못된 데이터를 찾은 사람: pichulia
+링크
+ACM-ICPC Live Archive
+HDU Online Judge
+메모
+
+
+```c++
+#include <iostream>
+#include <string>
+#define MAXT 1000
+#define MAXR 10
+#define MAXL 22
+
+using namespace std;
+
+int main() {
+  int T, R = 0;
+  char s[MAXL];
+
+  scanf("%d", &T);
+
+  for(int i = 0; i < T; i++) {
+    scanf("%d %s", &R, s);
+
+    for(int i = 0; i < MAXL; i++) {
+      if (s[i] != '\0') {
+        for(int j = 0; j < R; j++) {
+          printf("%c",s[i]);
+        }
+        continue;
+      } else {
+        printf("\n");
+        break;
+      }
+    }
+  }
+
+  return 0;
+}
+
+
+//compile error!!! putchar, puts
+#include <iostream>
+#include <string>
+
+int main(){
+  int t, i, j, k, n, length;
+  char str[22] = " ";
+  scanf("%d", &t);
+
+  for(i = 0; i < t; i++){
+    scanf("%d%s", &n, str);
+
+    length = strlen(str);
+
+    for(j = 0; j < length; j++){
+      for(k = 0; k < n; k++){
+        putchar(str[j]);
+      }
+    }
+
+    puts("");
+  }
+}
 ```
 
 
