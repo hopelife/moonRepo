@@ -53,22 +53,37 @@
 			}
 		},
 		{
-			"file": "_meta/guide/_git.md",
+			"file": "_doing/temp/algorithm_baekjoon.md",
 			"settings":
 			{
-				"buffer_size": 2322,
+				"buffer_size": 53667,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "## purpose\n\n## venchmark\n\n### 생활코딩\n[생활코딩](https://opentutorials.org/course/1)\n\n\n### 고락가락닷컴\n[고락가락닷컴](http://gorakgarak.tistory.com/)\n\n### Aiden\n[Aiden](https://isme2n.github.io/)\n\n## site map\n\n### user level\n\n### menu\n- IT\n  - IT Trend\n  - IT History\n  - Ontology\n  - Data Collection\n  - Data Analysis\n  - Software Dev\n  - Hardware\n  - OS\n  - MindMap\n- KM\n  - 기초이론\n  - 역사\n  - 생리학\n  - 병리학\n  - 임상학\n  - 과제\n\n- KMIT\n  - 진단/변증\n  - 처방/예후\n  - 자동화\n\n- CL\n  - Art\n  - Literature\n  - Philosophy\n  - Fishing\n  - Baduk\n\n\n\n\n#### 고락가락\n* 분류 전체보기\t(832)\n* IT 트렌드\t(9)\n* IT 서평\t(44)\n* 블록체인\t(5)\n* 데이터분석\t(135)\n선형대수 (4)\n기초통계 (14)\nPreprocessing (3)\nMachine Learning (39)\nDeep Learning (10)\nVision Recognition (37)\nData Visualization (8)\nCode & Tools & Script Snippet (15)\n* 소프트웨어 개발\t(148)\nDesign Pattern (16)\nAlgorithm (9)\nHadoop Ecosystem (8)\nScala - Functional (29)\nJava - Basic (42)\nC (12)\nPython (30)\n기타언어 (2)\n* 모바일\t(107)\nAndroid (58)\niOS (28)\nHybrid (21)\n* 웹 & 프레임워크\t(168)\n* 하드웨어\t(18)\nIoT (14)\nVR (4)\n* 데이터베이스\t(46)\n* 디자인\t(11)\n* 운영체제\t(17)\n* 도메인\t(41)\n전자장비&자동차 (9)\n금융공학 (24)\nERP (8)\n* 기타활동\t(68)\n고락티콘 (2)\n아이디어 저장소 (1)\n느낀점 (24)\n개념정리 (11)\n기타 (30)\n* 맛집탐방\t(12)\n* 세계탐방\t(2)\n\n\n#### Aiden\n* Essay\n* Tip\n* Video\n  React\n* Review\n  Book\n  Event\n  Things\n  Food\n  Movie\n  Music\n* Documents\n  48wedding\n  Boilerplate\n  Secreport\n* Devlog\n  JavaScript\n  ML\n  Node.js\n  React\n  Web\n  AWS\n  Data\n  Git\n  Infra\n  Linux\n  Meteor\n  Vue\n  Jekyll\n  MongoDB\n  Algorithm\n* About\n\n\n## dev schedule\n\n\n",
-			"file": "_meta/plan/_blog.md",
-			"file_size": 382,
-			"file_write_time": 131668932018465500,
+			"contents": "\n#include <stdio.h>\n#include <string.h>\nint main(){\n\tint t, i, j, k, n, length;\n\tchar str[30] = \" \";\n\tscanf(\"%d\", &t);\n\tfor(i = 0; i < t; i++){\n\t\tscanf(\"%d%s\", &n, str);\n\t\tlength = strlen(str);\n\t\tfor(j = 0; j < length; j++){\n\t\t\tfor(k = 0; k < n; k++){\n\t\t\t\tputchar(str[j]);\n\t\t\t}\n\t\t}\n\t\tputs(\"\");\n\t}\n}",
 			"settings":
 			{
-				"buffer_size": 1451,
+				"buffer_size": 298,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include<iostream>\n#include<cstdio>\n#define LEN 8\nenum {ASC=0, DESC, MIXED};\nusing namespace std;\n\nint main(void){\n  int result=0;\n  int arr[LEN];\n\n  for(int i=0; i<LEN; i++){\n    scanf(\"%d\", &arr[i]);\n  }\n\n  //초기 값 정해주기\n  if(arr[1]-arr[0] == 1)result = ASC;\n  else if(arr[1]-arr[0] == -1)result = DESC;\n  else result = MIXED;\n\n  //이전 값과 같은지 아닌지\n  for(int i=1; i<LEN-1; i++){\n    if(arr[i+1]-arr[i] == 1 && result == ASC) continue;\n    if(arr[i+1]-arr[i] == -1 && result == DESC) continue;\n\n    result = MIXED;\n    break;\n  }\n\n\n  if(result == ASC) cout << \"ascending\";\n  else if(result == DESC) cout << \"descending\";\n  else cout << \"mixed\";\n\n  return 0;\n}\nColored by Color Scripter\n\n\n출처: http://blockdmask.tistory.com/213 [개발자 지망생]",
+			"settings":
+			{
+				"buffer_size": 731,
+				"line_ending": "Unix",
+				"name": "#include<iostream>"
+			}
+		},
+		{
+			"file": "_meta/guide/_github_blog.md",
+			"settings":
+			{
+				"buffer_size": 3569,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -78,14 +93,6 @@
 			{
 				"buffer_size": 21143,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "### 그리스어\n\n| ``\\alpha \\beta \\gamma \\delta \\epsilon \\zeta \\eta \\theta`` | $$ \\alpha \\beta \\gamma \\delta \\epsilon \\zeta \\eta \\theta $$ |\n|---|---|\n| ``\\iota \\kappa \\lambda \\mu \\nu \\xi \\pi \\rho`` | $$ \\iota \\kappa \\lambda \\mu \\nu \\xi \\pi \\rho $$ |\n| ``\\sigma \\tau \\upsilon \\phi \\chi \\psi \\omega`` | $$ \\sigma \\tau \\upsilon \\phi \\chi \\psi \\omega $$ |\n| ``\\alpha \\beta \\gamma \\delta \\epsilon \\zeta \\eta \\theta`` | $$ \\alpha \\beta \\gamma \\delta \\epsilon \\zeta \\eta \\theta $$ |\n| ``\\iota \\kappa \\lambda \\mu \\nu \\xi \\pi \\rho`` | $$ \\iota \\kappa \\lambda \\mu \\nu \\xi \\pi \\rho $$ |\n| ``\\sigma \\tau \\upsilon \\phi \\chi \\psi \\omega`` | $$ \\sigma \\tau \\upsilon \\phi \\chi \\psi \\omega $$ |\n| ``\\varepsilon \\digamma \\varkappa \\varpi`` | $$ \\varepsilon \\digamma \\varkappa \\varpi $$ |\n| ``\\varrho \\varsigma \\vartheta \\varphi`` | $$ \\varrho \\varsigma \\vartheta \\varphi $$ |\n\n### 히브리어\n\n| | |\n|---|---|\n| ``\\aleph \\beth \\gimel \\daleth`` | $$ \\aleph \\beth \\gimel \\daleth $$ |\n\n\n### 칠판체 로마자\n\n| ``\\mathbb{ABCDEFGHI}`` | $$ \\mathbb{ABCDEFGHI} $$ |\n|---|---|\n| ``\\mathbb{JKLMNOPQR}`` | $$ \\mathbb{JKLMNOPQR} $$ |\n| ``\\mathbb{STUVWXYZ}``  | $$ \\mathbb{STUVWXYZ} $$ |\n\n### 볼드체 로마자\n\n| ``\\mathbf{ABCDEFGHI}`` | $$ \\mathbf{ABCDEFGHI} $$ |\n|---|---|\n| ``\\mathbf{JKLMNOPQR}`` | $$ \\mathbf{JKLMNOPQR} $$ |\n| ``\\mathbf{STUVWXYZ}`` | $$ \\mathbf{STUVWXYZ} $$ |\n| ``\\mathbf{abcdefghijklm}`` | $$ \\mathbf{abcdefghijklm} $$ |\n| ``\\mathbf{nopqrstuvwxyz}`` | $$ \\mathbf{nopqrstuvwxyz} $$ |\n| ``\\mathbf{0123456789}`` | $$ \\mathbf{0123456789} $$ |\n\n### 볼드체 그리스어\n\n| ``\\boldsymbol{\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta}`` | $$ \\boldsymbol{\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta} $$ |\n|---|---|\n| ``\\boldsymbol{\\iota\\kappa\\lambda\\mu\\nu\\xi\\pi\\rho}`` | $$ \\boldsymbol{\\iota\\kappa\\lambda\\mu\\nu\\xi\\pi\\rho} $$ |\n| ``\\boldsymbol{\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega}`` | $$ \\boldsymbol{\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega} $$ |\n| ``\\boldsymbol{\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta}`` | $$ \\boldsymbol{\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta} $$ |\n| ``\\boldsymbol{\\iota\\kappa\\lambda\\mu\\nu\\xi\\pi\\rho}`` | $$ \\boldsymbol{\\iota\\kappa\\lambda\\mu\\nu\\xi\\pi\\rho} $$ |\n| ``\\boldsymbol{\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega}`` | $$ \\boldsymbol{\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega} $$ |\n| ``\\boldsymbol{\\varepsilon\\digamma\\varkappa\\varpi}`` | $$ \\boldsymbol{\\varepsilon\\digamma\\varkappa\\varpi} $$ |\n| ``\\boldsymbol{\\varrho\\varsigma\\vartheta\\varphi}`` | $$ \\boldsymbol{\\varrho\\varsigma\\vartheta\\varphi} $$ |\n\n### 기울임체 로마자\n\n| | |\n|---|---|\n| ``\\mathit{0123456789}`` | $$ \\mathit{0123456789} $$ |\n\n\n### 기울임체 그리스어\n\n| ``\\mathit{\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta}`` | $$ \\mathit{\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta} $$ |\n|---|---|\n| ``\\mathit{\\iota\\kappa\\lambda\\mu\\nu\\xi\\pi\\rho}`` | $$ \\mathit{\\iota\\kappa\\lambda\\mu\\nu\\xi\\pi\\rho} $$ |\n| ``\\mathit{\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega}`` | $$ \\mathit{\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega} $$ |\n\n### 로만체\n\n| ``\\mathrm{ABCDEFGHI}`` | $$ \\mathrm{ABCDEFGHI} $$ |\n|---|---|\n| ``\\mathrm{JKLMNOPQR}`` | $$ \\mathrm{JKLMNOPQR} $$ |\n| ``\\mathrm{STUVWXYZ}`` | $$ \\mathrm{STUVWXYZ} $$ |\n| ``\\mathrm{abcdefghijklm}`` | $$ \\mathrm{abcdefghijklm} $$ |\n| ``\\mathrm{nopqrstuvwxyz}`` | $$ \\mathrm{nopqrstuvwxyz} $$ |\n| ``\\mathrm{0123456789}`` | $$ \\mathrm{0123456789} $$ |\n\n### 산세리프체\n\n| ``\\mathsf{ABCDEFGHI}`` | $$ \\mathsf{ABCDEFGHI} $$ |\n|---|---|\n| ``\\mathsf{JKLMNOPQR}`` | $$ \\mathsf{JKLMNOPQR} $$ |\n| ``\\mathsf{STUVWXYZ}`` | $$ \\mathsf{STUVWXYZ} $$ |\n| ``\\mathsf{abcdefghijklm}`` | $$ \\mathsf{abcdefghijklm} $$ |\n| ``\\mathsf{nopqrstuvwxyz}`` | $$ \\mathsf{nopqrstuvwxyz} $$ |\n| ``\\mathsf{0123456789}`` | $$ \\mathsf{0123456789} $$ |\n\n### 산세리프체 그리스어\n\n| ``\\mathsf{\\alpha \\beta \\gamma \\delta \\epsilon \\zeta \\eta \\theta}`` | $$ \\mathsf{\\alpha \\beta \\gamma \\delta \\epsilon \\zeta \\eta \\theta} $$ |\n|---|---|\n| ``\\mathsf{\\iota \\kappa \\lambda \\mu \\nu \\xi \\pi \\rho}`` | $$ \\mathsf{\\iota \\kappa \\lambda \\mu \\nu \\xi \\pi \\rho} $$ |\n| ``\\mathsf{\\sigma \\tau \\upsilon \\phi \\chi \\psi \\omega}`` | $$ \\mathsf{\\sigma \\tau \\upsilon \\phi \\chi \\psi \\omega} $$ |",
-			"settings":
-			{
-				"buffer_size": 4056,
 				"line_ending": "Unix"
 			}
 		},
@@ -177,6 +184,9 @@
 	"expanded_folders":
 	[
 		"/Users/macmini/Apps/github/data/moonRepo",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/down",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/temp",
 		"/Users/macmini/Apps/github/data/moonRepo/_meta",
 		"/Users/macmini/Apps/github/data/moonRepo/_meta/guide",
 		"/Users/macmini/Apps/github/site",
@@ -193,6 +203,8 @@
 	],
 	"file_history":
 	[
+		"/Users/macmini/Apps/github/data/moonRepo/_meta/plan/_blog.md",
+		"/Users/macmini/Apps/github/data/moonRepo/_meta/guide/_git.md",
 		"/Volumes/data/dev/bookmarks_18. 3. 29..html",
 		"/Users/macmini/Apps/github/site/test/_layouts/list.html",
 		"/Users/macmini/Apps/github/site/jasper2/_includes/head.html",
@@ -209,7 +221,7 @@
 	],
 	"find":
 	{
-		"height": 53.0
+		"height": 57.0
 	},
 	"find_in_files":
 	{
@@ -224,6 +236,14 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"\\n{2,}",
+			"^\\t+$",
+			"^ +$",
+			"    ",
+			"scanf",
+			"{0,",
+			"n/pow(10, i)",
+			" ;",
 			"\\\\([A-Z])",
 			"Shell",
 			" *\\$\\$ *",
@@ -259,6 +279,9 @@
 		"regex": true,
 		"replace_history":
 		[
+			"\\n",
+			"",
+			"  ",
 			"\\\\\\L\\1",
 			"shell",
 			" \\$\\$ ",
@@ -299,7 +322,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -327,7 +350,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
@@ -355,7 +378,7 @@
 						"translation.y": 23581.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -385,7 +408,7 @@
 						"translation.y": 4369.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -413,7 +436,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -441,24 +464,113 @@
 						"translation.y": 3.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "_meta/guide/_git.md",
+					"file": "_doing/temp/algorithm_baekjoon.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2322,
+						"buffer_size": 53667,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								185,
-								185
+								36389,
+								36389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 95746.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								298,
+								1
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								681,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#include<iostream>",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "_meta/guide/_github_blog.md",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -471,39 +583,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "_meta/plan/_blog.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1451,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1422,
-								1422
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "/Users/macmini/Apps/github/site/test/_posts/2018-03-31-md_latex.md",
 					"semi_transient": false,
 					"settings":
@@ -524,41 +608,14 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 23773.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4056,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								4056
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"semi_transient": false,
 					"settings":
 					{
@@ -4132,11 +4189,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "/Users/macmini/Apps/github/site/test/_site/2018/03/31/md_latex/index.html",
 					"semi_transient": false,
 					"settings":
@@ -4162,11 +4219,11 @@
 						"translation.y": 48809.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "/Users/macmini/Apps/github/site/test/_posts/2018-03-31-md_mermaid.md",
 					"semi_transient": false,
 					"settings":
@@ -4192,11 +4249,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "/Users/macmini/Apps/github/site/test/_includes/head.html",
 					"semi_transient": false,
 					"settings":
@@ -4214,17 +4271,19 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"semi_transient": false,
 					"settings":
 					{
@@ -4248,7 +4307,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 13,
 					"type": "text"
 				}
 			]
@@ -4256,7 +4315,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 40.0
+		"height": 44.0
 	},
 	"input":
 	{
@@ -4293,7 +4352,7 @@
 	"project": "moonRepo.sublime-project",
 	"replace":
 	{
-		"height": 98.0
+		"height": 106.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -4331,7 +4390,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 318.0,
+	"side_bar_width": 251.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
