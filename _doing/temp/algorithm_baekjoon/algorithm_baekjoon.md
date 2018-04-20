@@ -2022,7 +2022,7 @@ int main() {
 #### 출처
 - 문제를 번역한 사람: baekjoon
 - 데이터를 추가한 사람: ho94949
-빠진 조건을 찾은 사람: powdragon1
+- 빠진 조건을 찾은 사람: powdragon1
 
 #### 메모
 - 평균 + 조건에 따른 변수값 변경
@@ -2141,9 +2141,9 @@ Contest > Waterloo's local Programming Contests > 28 September, 2002 D번
 - 문제의 오타를 찾은 사람: choiking10
 
 #### 링크
-PKU Judge Online
-ZJU Online Judge
-TJU Online Judge
+- PKU Judge Online
+- ZJU Online Judge
+- TJU Online Judge
 
 #### 메모
 - 평균 + 값 비교
@@ -2326,11 +2326,11 @@ ACM-ICPC > Regionals > North America > Mid-Central Regional > [1998 Mid-Central 
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-ACM-ICPC Live Archive
-PKU Judge Online
-ZJU Online Judge
-TJU Online Judge
-HDU Online Judge
+- ACM-ICPC Live Archive
+- PKU Judge Online
+- ZJU Online Judge
+- TJU Online Judge
+- HDU Online Judge
 
 #### 알고리즘 분류
 
@@ -2597,7 +2597,7 @@ The Curious Case of Benjamin Button
 
 #### 출처
 - 문제를 만든 사람: author5
-빠진 조건을 찾은 사람: his130
+- 빠진 조건을 찾은 사람: his130
 
 #### 알고리즘 분류
 
@@ -2788,8 +2788,8 @@ ACM-ICPC > Regionals > Asia > Korea > [Asia Regional - Seoul 2005](https://www.a
 - 문제의 오타를 찾은 사람: jh82582
 
 #### 링크
-[ACM-ICPC Live Archive](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1355)
-[TJU Online Judge](http://acm.tju.edu.cn/toj/showp2501.html)
+- [ACM-ICPC Live Archive](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1355)
+- [TJU Online Judge](http://acm.tju.edu.cn/toj/showp2501.html)
 
 #### 메모
 - 배열, 등차수열 구현
@@ -3239,8 +3239,8 @@ ACM-ICPC > Regionals > North America > Greater New York Region > 2011 Greater Ne
 - 잘못된 데이터를 찾은 사람: pichulia
 
 #### 링크
-ACM-ICPC Live Archive
-HDU Online Judge
+- ACM-ICPC Live Archive
+- HDU Online Judge
 
 #### 메모
 - 배열
@@ -4325,7 +4325,7 @@ int getIt(int n, int k) {
 #### 출처
 - 문제를 번역한 사람: baekjoon
 - 데이터를 추가한 사람: doju
-빠진 조건을 찾은 사람: newdeal
+- 빠진 조건을 찾은 사람: newdeal
 - 문제의 오타를 찾은 사람: waylight3
 
 #### 알고리즘 분류
@@ -5157,7 +5157,7 @@ print(array.last! - array.first!)
 
 #### 출처
 - 문제를 번역한 사람: baekjoon
-빠진 조건을 찾은 사람: bvba djm03178
+- 빠진 조건을 찾은 사람: bvba djm03178
 
 #### 알고리즘 분류
 
@@ -6072,7 +6072,7 @@ int main() {
 
 #### 출처
 - 문제를 만든 사람: author5
-빠진 조건을 찾은 사람: pumpyboom
+- 빠진 조건을 찾은 사람: pumpyboom
 
 #### 알고리즘 분류
 
@@ -6134,11 +6134,11 @@ int main() {
 ACM-ICPC > Regionals > Europe > Northwestern European Regional Contest > NWERC 2006 F번
 
 #### 링크
-ACM-ICPC Live Archive
-PKU Judge Online
-TJU Online Judge
-Sphere Online Judge
-HDU Online Judge
+- ACM-ICPC Live Archive
+- PKU Judge Online
+- TJU Online Judge
+- Sphere Online Judge
+- HDU Online Judge
 
 #### 알고리즘 분류
 
@@ -6977,9 +6977,9 @@ Contest > University of Ulm Local Contest > University of Ulm Local Contest 1997
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-PKU Judge Online
-ZJU Online Judge
-TJU Online Judge
+- PKU Judge Online
+- ZJU Online Judge
+- TJU Online Judge
 
 #### 메모
 
@@ -7098,7 +7098,7 @@ RGB거리에 사는 사람들은 집을 빨강, 초록, 파랑중에 하나로 �
 
 #### 출처
 - 문제를 번역한 사람: baekjoon
-빠진 조건을 찾은 사람: djm03178
+- 빠진 조건을 찾은 사람: djm03178
 - 데이터를 추가한 사람: rdd6584
 
 #### 알고리즘 분류
@@ -7165,8 +7165,8 @@ Olympiad > International Olympiad in Informatics > IOI 1994 1번
 - 잘못된 데이터를 찾은 사람: thanatos0128
 
 #### 링크
-PKU Judge Online
-Sphere Online Judge
+- PKU Judge Online
+- Sphere Online Judge
 
 #### 알고리즘 분류
 
@@ -7384,7 +7384,7 @@ int main() {
 - 데이터를 추가한 사람: djm03178 minshogi zzaa9898
 - 잘못된 데이터를 찾은 사람: tncks0121
 - 문제의 오타를 찾은 사람: xivnick
-빠진 조건을 찾은 사람: yclock
+- 빠진 조건을 찾은 사람: yclock
 
 #### 알고리즘 분류
 
@@ -7493,7 +7493,7 @@ n가지 종류의 동전이 있다. 각각의 동전이 나타내는 가치는 �
 #### 힌트
 
 #### 출처
-빠진 조건을 찾은 사람: goodcrane3
+- 빠진 조건을 찾은 사람: goodcrane3
 
 #### 알고리즘 분류
 
@@ -7550,7 +7550,7 @@ int main() {
 #### 힌트
 
 #### 출처
-빠진 조건을 찾은 사람: keith
+- 빠진 조건을 찾은 사람: keith
 
 #### 알고리즘 분류
 
@@ -7777,7 +7777,7 @@ n개의 정수로 이루어진 임의의 수열이 주어진다. 우리는 이 �
 
 #### 출처
 - 데이터를 추가한 사람: dohyeokkim doju kimdr123
-빠진 조건을 찾은 사람: isac322 Qwaz
+- 빠진 조건을 찾은 사람: isac322 Qwaz
 - 잘못된 데이터를 찾은 사람: tncks0121
 
 #### 알고리즘 분류
@@ -7836,7 +7836,7 @@ ACM-ICPC > Regionals > Asia > Korea > Asia Regional - Daejeon 2013 G번
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-ACM-ICPC Live Archive
+- ACM-ICPC Live Archive
 
 #### 알고리즘 분류
 
@@ -8031,7 +8031,7 @@ r2-r1+1개의 줄에 소용돌이를 예쁘게 출력한다.
 #### 출처
 - 문제를 번역한 사람: baekjoon
 어색한 표현을 찾은 사람: lobo_prix
-빠진 조건을 찾은 사람: myungwoo
+- 빠진 조건을 찾은 사람: myungwoo
 
 #### 알고리즘 분류
 
@@ -8101,7 +8101,7 @@ Contest > Croatian Open Competition in Informatics > COCI 2006/2007 > Contest #1
 - 문제의 오타를 찾은 사람: onjo0127
 
 #### 링크
-TJU Online Judge
+- TJU Online Judge
 
 #### 알고리즘 분류
 
@@ -8352,7 +8352,7 @@ int main() {
 
 #### 출처
 - 문제의 오타를 찾은 사람: effectiveservice
-빠진 조건을 찾은 사람: koosaga
+- 빠진 조건을 찾은 사람: koosaga
 
 #### 메모
 
@@ -9277,11 +9277,11 @@ Contest > University of Ulm Local Contest > University of Ulm Local Contest 2003
 - 데이터를 추가한 사람: kth004
 
 #### 링크
-PKU Judge Online
-ZJU Online Judge
-TJU Online Judge
-Sphere Online Judge
-HDU Online Judge
+- PKU Judge Online
+- ZJU Online Judge
+- TJU Online Judge
+- Sphere Online Judge
+- HDU Online Judge
 
 #### 알고리즘 분류
 
@@ -10199,8 +10199,8 @@ int main() {
 ACM-ICPC > Regionals > Asia > Korea > Asia Regional - Seoul 2005 B번
 
 #### 링크
-ACM-ICPC Live Archive
-TJU Online Judge
+- ACM-ICPC Live Archive
+- TJU Online Judge
 
 #### 알고리즘 분류
 
@@ -11339,7 +11339,7 @@ BFS나 DFS로 그래프를 순회해 답을 구하는 문제4
 
 #### 출처
 - 문제를 번역한 사람: baekjoon
-빠진 조건을 찾은 사람: jung2381187
+- 빠진 조건을 찾은 사람: jung2381187
 - 문제의 오타를 찾은 사람: na982
 
 #### 알고리즘 분류
@@ -11402,7 +11402,7 @@ ACM-ICPC > Regionals > Asia > Korea > Asia Regional - Daejeon 2014 F번
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-ACM-ICPC Live Archive
+- ACM-ICPC Live Archive
 
 #### 메모
 
@@ -11479,8 +11479,8 @@ ACM-ICPC > Regionals > Europe > Northwestern European Regional Contest > NWERC 2
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-ACM-ICPC Live Archive
-TJU Online Judge
+- ACM-ICPC Live Archive
+- TJU Online Judge
 
 #### 풀이
 ```c++
@@ -11537,7 +11537,7 @@ N명의 학생들을 키 순서대로 줄을 세우려고 한다. 각 학생의 
 #### 힌트
 
 #### 출처
-빠진 조건을 찾은 사람: indioindio
+- 빠진 조건을 찾은 사람: indioindio
 
 #### 풀이
 ```c++
@@ -11589,7 +11589,7 @@ N개의 각 건물이 완성되기까지 걸리는 최소 시간을 출력한다
 #### 힌트
 
 #### 출처
-빠진 조건을 찾은 사람: jung2381187
+- 빠진 조건을 찾은 사람: jung2381187
 
 #### 풀이
 ```c++
@@ -11642,7 +11642,7 @@ N개의 문제는 모두 풀어야 한다.
 
 #### 출처
 - 문제를 만든 사람: author5
-빠진 조건을 찾은 사람: yclock
+- 빠진 조건을 찾은 사람: yclock
 
 #### 풀이
 ```c++
@@ -11696,7 +11696,7 @@ INF
 #### 힌트
 
 #### 출처
-빠진 조건을 찾은 사람: algoshipda
+- 빠진 조건을 찾은 사람: algoshipda
 - 문제를 만든 사람: author5
 
 #### 풀이
@@ -11800,11 +11800,11 @@ YES
 #### 출처
 Olympiad > USA Computing Olympiad > 2006-2007 Season > USACO December 2006 Contest > Gold 1번
 - 문제의 오타를 찾은 사람: adgdsda
-빠진 조건을 찾은 사람: joeyvalentine kipa00 progresivojs wooljs
+- 빠진 조건을 찾은 사람: joeyvalentine kipa00 progresivojs wooljs
 
 #### 링크
-PKU Judge Online
-TJU Online Judge
+- PKU Judge Online
+- TJU Online Judge
 
 #### 풀이
 ```c++
@@ -11999,7 +11999,7 @@ KMP
 #### 출처
 Contest > Croatian Open Competition in Informatics > COCI 2009/2010 > Contest #4 1번
 - 문제를 번역한 사람: baekjoon
-빠진 조건을 찾은 사람: hoy9090
+- 빠진 조건을 찾은 사람: hoy9090
 
 #### 풀이
 ```c++
@@ -12128,7 +12128,7 @@ ACM-ICPC > Regionals > Asia > Korea > Asia Regional - Seoul 2007 B번
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-ACM-ICPC Live Archive
+- ACM-ICPC Live Archive
 
 #### 풀이
 ```c++
@@ -12184,9 +12184,9 @@ Contest > Waterloo's local Programming Contests > 1 June, 2002 D번
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-PKU Judge Online
-ZJU Online Judge
-TJU Online Judge
+- PKU Judge Online
+- ZJU Online Judge
+- TJU Online Judge
 
 #### 풀이
 ```c++
@@ -12528,7 +12528,7 @@ N줄에 0 이상 9 이하의 숫자가 세 개씩 적혀 있다. 내려가기 �
 #### 힌트
 
 #### 출처
-빠진 조건을 찾은 사람: dreamian
+- 빠진 조건을 찾은 사람: dreamian
 - 잘못된 데이터를 찾은 사람: tncks0121
 
 #### 풀이
@@ -12629,7 +12629,7 @@ int main() {
 #### 출처
 - 문제를 번역한 사람: baekjoon
 - 데이터를 추가한 사람: djm03178 plzrun
-빠진 조건을 찾은 사람: iriszero
+- 빠진 조건을 찾은 사람: iriszero
 
 #### 풀이
 ```c++
@@ -12804,7 +12804,7 @@ Contest > Croatian Open Competition in Informatics > COCI 2008/2009 > Contest #3
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-Sphere Online Judge
+- Sphere Online Judge
 
 #### 풀이
 ```c++
@@ -12903,7 +12903,7 @@ ACM-ICPC > Regionals > Asia > Thailand > 2011 ACM-ICPC Asia Phuket Regional Prog
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-ACM-ICPC Live Archive
+- ACM-ICPC Live Archive
 
 #### 풀이
 ```c++
@@ -13087,7 +13087,7 @@ N과 비용 행렬이 주어졌을 때, 가장 적은 비용을 들이는 외판
 #### 힌트
 
 #### 출처
-빠진 조건을 찾은 사람: kcm1700
+- 빠진 조건을 찾은 사람: kcm1700
 - 데이터를 추가한 사람: sys7961
 - 문제의 오타를 찾은 사람: tjrwodnjs999
 
@@ -13716,10 +13716,10 @@ QC TH KC 8D
 ACM-ICPC > Regionals > Europe > Northeastern European Regional Contest > NEERC 2005 D번
 
 #### 링크
-ACM-ICPC Live Archive
-PKU Judge Online
-ZJU Online Judge
-TJU Online Judge
+- ACM-ICPC Live Archive
+- PKU Judge Online
+- ZJU Online Judge
+- TJU Online Judge
 
 #### 풀이
 ```c++
@@ -13773,8 +13773,8 @@ ACM-ICPC > Regionals > North America > Greater New York Region > 2012 Greater Ne
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-ACM-ICPC Live Archive
-HDU Online Judge
+- ACM-ICPC Live Archive
+- HDU Online Judge
 
 #### 풀이
 ```c++
@@ -13873,7 +13873,7 @@ int main() {
 (1,4), (5,7), (8,11), (12,14) 를 이용할 수 있다.
 
 #### 출처
-빠진 조건을 찾은 사람: andy627 breakun
+- 빠진 조건을 찾은 사람: andy627 breakun
 - 데이터를 추가한 사람: kimchangyoung rosedskim
 
 #### 풀이
@@ -14094,9 +14094,9 @@ Contest > Waterloo's local Programming Contests > 19 September, 2004 B번
 - 문제를 번역한 사람: baekjoon
 
 #### 링크
-PKU Judge Online
-ZJU Online Judge
-TJU Online Judge
+- PKU Judge Online
+- ZJU Online Judge
+- TJU Online Judge
 
 #### 풀이
 ```c++
