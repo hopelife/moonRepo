@@ -5553,7 +5553,7 @@ M이상 N이하의 소수를 모두 출력하는 프로그램을 작성하시오
 #include <cstdio>
 
 // 1<= M <= N <= 1,000,000
-int main(void){
+int main(){
   int M, N;  //입력 값
 
   scanf("%d %d", &M, &N);
@@ -5566,13 +5566,10 @@ int main(void){
     arr[i] = true;
   }
 
-
   int j;  //제곱의 수를 받을 변수
 
   for(int i=2; i<N+1; i++) {
-
     if(arr[i]) { //true이면
-
       if((unsigned int)i*i > 1000001) {
         //제곱이 범위를 넘으면 for 문을 나옵니다
         break;
@@ -5582,7 +5579,6 @@ int main(void){
           arr[j] = false; //소수가 아닌 수들을 false로 바꿔줌
         }
       }
-
     }
   }
 
