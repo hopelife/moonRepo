@@ -5651,6 +5651,8 @@ ACM-ICPC > Regionals > Asia > Japan > Domestic Contest > 2011 Domestic Contest A
 #### 보기
 
 #### 메모
+- 소수
+- prime함수 사용을 최소화하는 방법 확인 필요 [!]
 
 #### 풀이
 ```c++
@@ -5658,13 +5660,43 @@ ACM-ICPC > Regionals > Asia > Japan > Domestic Contest > 2011 Domestic Contest A
 
 #include <cstdio>
 
+bool prime(int n) {
+  if(n<2) return false;
+  for(int j=2; j*j<=n; j++) {
+    if(n%j == 0)
+      return false;
+  }
+  return true;
+}
+
 int main() {
+  int n = -1;  //입력 변수
+
+  for(;;) {
+    //입력
+    scanf("%d", &n);
+
+    int cnt = 0;
+    if(n==0) {
+      break;
+    }
+
+    //counting
+    for(int i=n+1; i<2*n+1; i++) {
+      if(prime(i)) {
+        cnt++;
+      }
+    }
+    
+    // 출력
+    printf("%d\n", cnt);
+  }
 
 }
 ```
 
 
-### 9020  골드바흐의 추측
+### 9020  골드바흐의 추측 [#]
 n이 주어졌을 때, 두 소수의 합으로 n을 표현하는 문제
 
 #### 문제
@@ -5706,6 +5738,8 @@ ACM-ICPC > Regionals > Asia > Korea > Nationwide Internet Competition > Asia Reg
 #### 보기
 
 #### 메모
+- 반복 최소화(시작점: 중앙값), prime 호출 최소화 [!]
+- prime 결과 배열을 이용하는 방법 확인 필요 [!]
 
 #### 풀이
 ```c++
@@ -5713,8 +5747,30 @@ ACM-ICPC > Regionals > Asia > Korea > Nationwide Internet Competition > Asia Reg
 
 #include <cstdio>
 
-int main() {
+bool prime(int n) {
+  if(n<2) return false;
+  for(int j=2; j*j<=n; j++) {
+    if(n%j == 0)
+      return false;
+  }
+  return true;
+}
 
+int main() {
+  int T;  // 입력 예정 개수
+
+  scanf("%d", &T);
+
+  for(int i=0; i < T; i++) {
+    int n;
+    scanf("%d", &n);
+    for(int j=n/2; j>1; j--) {
+      if(prime(j) && prime(n-j)) {
+        printf("%d %d\n", j, n-j);
+        break;
+      }
+    }
+  }
 }
 ```
 
@@ -5724,7 +5780,7 @@ int main() {
 스택을 구현해 봅니다
 
 
-### 10828 스택
+### 10828 스택 [#]
 스택의 개념을 익히고 실습해 봅니다
 
 #### 문제
@@ -5789,14 +5845,28 @@ top
 #### 보기
 
 #### 메모
+- ![백준 10828 스택 (C, C++ stack)](http://blockdmask.tistory.com/96)
 
+@@@@
 #### 풀이
 ```c++
 // [[c++]]
 
 #include <cstdio>
+#include <cstring>
 
 int main() {
+  int N;  //입력 명령 개수
+  scanf("%d", &N);
+
+  int *stack = new int[1];  //정수를 저장하는 스택
+
+  for(int i=0d; i<N; i++) {
+    string op;  // 명령어
+    int p; //명령 인수
+
+    operate(op)
+  }
 
 }
 ```
