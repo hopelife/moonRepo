@@ -966,7 +966,7 @@ func main(m: Int) -> Int {
 
   for _ in 0...4 {
     if n%5 == 0 {
-      //print(String(b + n/5))
+  // print(String(b + n/5))
       return b + n/5
     }
     if (n > 2) {
@@ -2249,7 +2249,7 @@ int main() {
   while(1) {
     M = 10*(M%10) + int((floor(M/10) + M%10))%10;
     c++;
-    //printf("N: %d M: %d c: %d\n",N, M, c);
+  // printf("N: %d M: %d c: %d\n",N, M, c);
     if (M == N) {
       printf("%d",c);
       return 0;
@@ -2354,7 +2354,7 @@ int main() {
   int p[10000] = {0,};
 
   for(int num=1; num<10000; num++){
-    //find self number
+  // find self number
     a = num / 1000;
     b = (num / 100) % 10;
     c = (num / 10) % 10;
@@ -2365,10 +2365,10 @@ int main() {
       p[res] = 1;
     }
 
-    //make sum
+  // make sum
     if(p[num] == 0){
       printf("%u\n", num);
-      //sum += num;
+  // sum += num;
     }
   }
   //printf("\nThe sum is %d\n", sum);
@@ -2549,7 +2549,7 @@ int main(void) {
 
 void triangle(int n, int x, int y) {
   if (n == 3) { //높이가 3이라면 삼각형을 만들어 출력한다.
-    //삼각형을 그린다.
+  // 삼각형을 그린다.
     arr[y][x] = '*';
     arr[y + 1][x - 1] = '*';
     arr[y + 1][x + 1] = '*';
@@ -2819,7 +2819,7 @@ int main() {
         ts += ps;
       } else if (ox[j] == 'X'){
         ps = 0;
-      //} else if (ox[j] == 'E' || ox[j] == '\0') {
+  // } else if (ox[j] == 'E' || ox[j] == '\0') {
       } else {
         break;
       }
@@ -2827,7 +2827,7 @@ int main() {
 
     printf("%d\n", ts);
 
-    // 변수, 배열 초기화
+  //  변수, 배열 초기화
     ts = 0;
     ps = 0;
     fill_n(ox, M, 'E');
@@ -3404,15 +3404,15 @@ int main() {
 
       p = (int)s[i] - (int)A;
 
-      //해당문자 빈도수 +1
+  // 해당문자 빈도수 +1
       m[p] += 1;
 
-      //최빈도 표시
+  // 최빈도 표시
       if (m[p] > x[0]) {
         x[0] = m[p];
         x[1] = (int)s[i];
         x[2] = 1;
-        //printf("s[i]: %d p: %d x[0]: %d x[1]: %d x[2]: %d\n", s[i], p, x[0], x[1], x[2]);
+  // printf("s[i]: %d p: %d x[0]: %d x[1]: %d x[2]: %d\n", s[i], p, x[0], x[1], x[2]);
         continue;
       } else if (m[p] == x[0]) {
         x[2]++;
@@ -3891,7 +3891,7 @@ int main() {
   //printf("m: %d n: %d a: %d\n", m, n, a);
 
   while(a < n) {
-    //printf("m: %d n: %d a: %d\n", m, n, a);
+  // printf("m: %d n: %d a: %d\n", m, n, a);
     m++;
     a = 3*m*m - 3*m + 1;
   }
@@ -3910,9 +3910,9 @@ int main(void){
   cin >> n;
 
   //계산
-  int cnt = 1;    //몇겹인지 = 최소 칸수
+  int cnt = 1;  // 몇겹인지 = 최소 칸수
   long long range =1; //숫자의 범위 ex) 2~7, 8~19를 나타내기 위함
-  long long tmp =1;   //6의 배수를 더하기 위해서 사용
+  long long tmp =1;  // 6의 배수를 더하기 위해서 사용
 
   while(1){
     if(range >= n){ //숫자의 범위가 커지면 break;
@@ -3985,7 +3985,7 @@ int main() {
 
   while (a < n) {
     a += 1 + m++;
-    //printf("m: %d a: %d n: %d\n", m, a, n);
+  // printf("m: %d a: %d n: %d\n", m, a, n);
   }
 
   if(m%2 == 0) {
@@ -4078,7 +4078,7 @@ int main() {
 
   //non-sqrt 이용
   for(int k = 0; k*k < d; k++) {
-    //printf("k: %d d: %d k*k: %d\n", k, d, k*k);
+  // printf("k: %d d: %d k*k: %d\n", k, d, k*k);
     if (k*k + 2*k + 1 < d) {
       continue;
     } else {
@@ -4189,7 +4189,7 @@ int main() {
 
   for(int i = 0; i < t; i++) {
     scanf("%d %d %d", &h, &w, &n);
-    //checkInput(h, w, n);
+  // checkInput(h, w, n);
     x = (n-1)/h + 1;
     y = (n-1)%h + 1;
 
@@ -4568,7 +4568,7 @@ int main() {
   for(int i = 0 ; i < n; i++) {
     for(int j = 0 ; j < n-1-i ; j++) {
 
-      //swap
+  // swap
       if(arr[j] > arr[j+1]) {
         tmp = arr[j];
         arr[j] = arr[j+1];
@@ -4631,7 +4631,7 @@ int main(void) {
     for(j= i-1 ; j>=0 ; j--){
       if(arr[j] > key){
         arr[j+1] = arr[j];
-      }else{
+      } else {
         break;
       }
     }
@@ -4990,7 +4990,7 @@ using namespace std;
 //sort 기준
 bool comp(const pair<int, int> &p1, const pair<int, int> &p2){
 
-  if(p1.second == p2.second){   //빈도수가 같으면
+  if(p1.second == p2.second){  // 빈도수가 같으면
     return p1.first < p2.first; //숫자(key)작은 게 앞으로
   }
   return p1.second > p2.second;  //다르면 빈도수가 큰 게 앞으로
@@ -5006,7 +5006,7 @@ int main(void) {
   //입력 1
   scanf("%d", n);
   for(int i=0; i<n ;i++){
-    //cin >> key;
+  // cin >> key;
     scanf("%d", key);
     v.push_back(key);
 
@@ -5042,7 +5042,7 @@ int main(void) {
       st.pop_back();  //기존것 없애고
       st.push_back(tmp);  //새로운 것 다시 삽입
 
-    }else{
+    } else {
       st.push_back(pair<int,int>(v[i],1));
     }
   }
@@ -5051,10 +5051,10 @@ int main(void) {
   sort(st.begin(), st.end(), comp);
 
   if(st[0].second == st[1].second){
-    //cout << st[1].first << endl;
+  // cout << st[1].first << endl;
     printf("%d\n", st[1].first);
-  }else{
-    //cout << st[0].first << endl;
+  } else {
+  // cout << st[0].first << endl;
     printf("%d\n", st[0].first);
   }
 
@@ -5571,10 +5571,10 @@ int main(){
   for(int i=2; i<N+1; i++) {
     if(arr[i]) { //true이면
       if((unsigned int)i*i > 1000001) {
-        //제곱이 범위를 넘으면 for 문을 나옵니다
+  // 제곱이 범위를 넘으면 for 문을 나옵니다
         break;
       } else {
-        //이미 있는 소수들의 배수들을 지워줍니다.
+  // 이미 있는 소수들의 배수들을 지워줍니다.
         for(j=(int)i*i; j<N+1; j += i){
           arr[j] = false; //소수가 아닌 수들을 false로 바꿔줌
         }
@@ -5673,7 +5673,7 @@ int main() {
   int n = -1;  //입력 변수
 
   for(;;) {
-    //입력
+  // 입력
     scanf("%d", &n);
 
     int cnt = 0;
@@ -5681,14 +5681,14 @@ int main() {
       break;
     }
 
-    //counting
+  // counting
     for(int i=n+1; i<2*n+1; i++) {
       if(prime(i)) {
         cnt++;
       }
     }
-    
-    // 출력
+
+  //  출력
     printf("%d\n", cnt);
   }
 
@@ -5847,32 +5847,106 @@ top
 #### 메모
 - ![백준 10828 스택 (C, C++ stack)](http://blockdmask.tistory.com/96)
 
-@@@@
 #### 풀이
 ```c++
 // [[c++]]
 
+// iostream, cin, cout
+#include  <iostream>
+#include  <string>
+
+using namespace std;
+
+int main() {
+  int st[11111];
+  int top = 0;
+
+  int N;
+  cin >> N;
+  string op;  // 명령어(연산자)
+
+  for (int i = 0; i < N; ++i) {
+    cin >> op;
+
+    if (op == "push") {
+      int num;
+      cin >> num;
+      st[++top] = num;
+    } else if (op == "pop") {
+      if (top == 0)
+        cout << -1 << endl;
+      else
+        cout << st[top--] << endl;
+    } else if (op == "size") {
+      cout << top << endl;
+    } else if (op == "top") {
+      if (top == 0)
+        cout << -1 << endl;
+      else
+        cout << st[top] << endl;
+    } else if (op == "empty") {
+      if (top == 0)
+        cout << 1 << endl;
+      else
+        cout << 0 << endl;
+
+    }
+  }
+
+  return 0;
+}
+
+//컴파일 에러!!
 #include <cstdio>
-#include <cstring>
+#include <string>
+
+using namespace std;
 
 int main() {
   int N;  //입력 명령 개수
   scanf("%d", &N);
+  fgetc(stdin);  // 버퍼 비우기.
 
-  int *stack = new int[1];  //정수를 저장하는 스택
+  //int *stack = new int[1];  //정수를 저장하는 스택
+  int st[11111];  //정수를 저장하는 스택
+  int top = 0;
 
-  for(int i=0d; i<N; i++) {
-    string op;  // 명령어
-    int p; //명령 인수
+  for(int i=0; i<N; i++) {
+    char op[6];  //  명령어
+    scanf("%s", op);
+    fgetc(stdin);  // 버퍼 비우기.
 
-    operate(op)
+    if (!strcmp(op, "push")) {
+      int num;
+      scanf("%d", &num);
+      st[++top] = num;
+    } else if (!strcmp(op, "pop")) {
+      if (top == 0)
+        printf("%d\n", -1);
+      else
+        printf("%d\n", st[top--]);
+    } else if (!strcmp(op, "size")) {
+      printf("%d\n", top);
+    } else if (!strcmp(op, "top")) {
+      if (top == 0)
+        printf("%d\n", -1);
+      else
+        printf("%d\n", st[top]);
+    } else if (!strcmp(op, "empty")) {
+      if (top == 0)
+        printf("%d\n", 1);
+      else
+        printf("%d\n", 0);
+
+    }
   }
 
+  return 0;
 }
 ```
 
 
-### 1874  스택 수열
+### 1874  스택 수열 [#]
 스택이 가지는 성질에 대해 고민하고 관련 문제를 해결해 봅니다
 
 #### 문제
@@ -5946,97 +6020,63 @@ NO
 #### 보기
 
 #### 메모
-
-#### 문제
-스택 (stack)은 기본적인 자료구조 중 하나로, 컴퓨터 프로그램을 작성할 때 자주 이용되는 개념이다. 스택은 자료를 넣는 (push) 입구와 자료를 뽑는 (pop) 입구가 같아 제일 먼저 들어간 자료가 제일 나중에 나오는 (FILO, first in last out) 특성을 가지고 있다.
-
-1부터 n까지의 수를 스택에 넣었다가 뽑아 늘어놓음으로써, 하나의 수열을 만들 수 있다. 이 때, 스택에 push하는 순서는 반드시 오름차순을 지키도록 한다고 하자. 임의의 수열이 주어졌을 때 스택을 이용해 그 수열을 만들 수 있는지 없는지, 있다면 어떤 순서로 push와 pop 연산을 수행해야 하는지를 알아낼 수 있다. 이를 계산하는 프로그램을 작성하라.
-
-#### 입력
-첫 줄에 n (1 ≤ n ≤ 100,000)이 주어진다. 둘째 줄부터 n개의 줄에는 수열을 이루는 1이상 n이하의 정수가 하나씩 순서대로 주어진다. 물론 같은 정수가 두 번 나오는 일은 없다.
-
-#### 출력
-입력된 수열을 만들기 위해 필요한 연산을 한 줄에 한 개씩 출력한다. push연산은 +로, pop 연산은 -로 표현하도록 한다. 불가능한 경우 NO를 출력한다.
-
-#### 예제 입력 1
-~~~
-8
-4
-3
-6
-8
-7
-5
-2
-1
-~~~
-
-#### 예제 출력 1
-~~~
-+
-+
-+
-+
--
--
-+
-+
--
-+
-+
--
--
--
--
--
-~~~
-
-#### 예제 입력 2
-~~~
-5
-1
-2
-5
-3
-4
-~~~
-
-#### 예제 출력 2
-~~~
-NO
-~~~
-
-#### 힌트
-1부터 n까지에 수에 대해 차례로 [push, push, push, push, pop, pop, push, push, pop, push, push, pop, pop, pop, pop, pop] 연산을 수행하면 수열 [4, 3, 6, 8, 7, 5, 2, 1]을 얻을 수 있다.
-
-#### 출처
-- 문제를 만든 사람: author5
-- 데이터를 추가한 사람: djm03178
-
-#### 알고리즘 분류
-
-#### 보기
-
-#### 메모
+- 스택 개념, 문제 이해하기 [!]
+- [백준 1874 - 스택 수열](http://blog.naver.com/PostView.nhn?blogId=occidere&logNo=220812563361)
 
 #### 풀이
 ```c++
 // [[c++]]
 
-#include <cstdio>
+#include <stdio.h>
+#include <stack>
+#include <vector>
+using namespace std;
+
+stack<int> stk;  // stack
+vector<char> ans;  // answer string push: '+', pop: '-'
 
 int main() {
 
+  int n;  // stack(stk) 크기
+  scanf("%d", &n);
+  int a[n];  // 입력값
+
+  for (int i=0; i<n; i++) {
+    scanf("%d", &a[i]);
+  }
+
+  int pos = 0;
+  for (int i=0; i<n; i++) {
+    stk.push(i+1);
+    ans.push_back('+');
+    while (!stk.empty() && stk.top() == a[pos]) {
+      stk.pop();
+      ans.push_back('-');
+      pos++;
+    }
+  }
+
+  if (!stk.empty()) {
+    puts("NO");
+  } else {
+    for (auto it : ans) {
+      printf("%c\n", it);
+    }
+    /*
+     int len = ans.size();
+     for (int i=0; i<len; i++) {
+     printf("%c\n", ans[i]);
+     }
+     */
+  }
+
+  return 0;
 }
 ```
 
 
-### 9012  괄호
+### 9012  괄호 [#]
 주어진 문자열이 올바른 괄호열인지 판단하는 문제
-
-괄호
-시간 제한 메모리 제한  제출  정답  맞은 사람 정답 비율
-1 초 128 MB  20487 8018  6084  39.244%
 
 #### 문제
 괄호 문자열(Parenthesis String, PS)은 두 개의 괄호 기호인 ‘(’ 와 ‘)’ 만으로 구성되어 있는 문자열이다. 그 중에서 괄호의 모양이 바르게 구성된 문자열을 올바른 괄호 문자열(Valid PS, VPS)이라고 부른다. 한 쌍의 괄호 기호로 된 “( )” 문자열은 기본 VPS 이라고 부른다. 만일 x 가 VPS 라면 이것을 하나의 괄호에 넣은 새로운 문자열 “(x)”도 VPS 가 된다. 그리고 두 VPS x 와 y를 접합(concatenation)시킨 새로운 문자열 xy도 VPS 가 된다. 예를 들어 “(())()”와 “((()))” 는 VPS 이지만 “(()(”, “(())()))” , 그리고 “(()” 는 모두 VPS 가 아닌 문자열이다.
@@ -6082,20 +6122,113 @@ ACM-ICPC > Regionals > Asia > Korea > Nationwide Internet Competition > Asia Reg
 #### 보기
 
 #### 메모
+- 스택 이용 vs 스택 이용안함 [!]
+- [Queue 올바른 괄호 문자열(Valid PS, VPS)](https://m.blog.naver.com/PostView.nhn?blogId=qls0147&logNo=220951773810) [!]
 
 #### 풀이
 ```c++
 // [[c++]]
 
-#include <cstdio>
+
+// 스택 이용
+#include<iostream>
+#include<stack>
+#include<string>
+
+using namespace std;
+
+bool check(string str) {
+  int len = (int)str.length();  // 문자열 길이
+  stack<char> stk;  // char 타입을 받는 stack 선언
+
+  for(int i=0; i<len ; i++) {  // 문자열 길이만큼 반복문
+    char c = str[i];  // 문자 하나씩 받음
+
+    if(c == '(') {
+      stk.push(str[i]);  //여는 괄호면 push
+    } else {
+      if(!stk.empty()) {  //닫는 괄호면 stack 이 비어있는지 확인후
+        stk.pop();  // 스택이 비어있지 않으면 pop
+      } else {
+        return false;  // 비어있으면 false.
+      }
+    }
+  }
+
+  return stk.empty();  // 반복문이 끝나고 스택에 괄호가 남아있으면 false
+}
+
+int main(void){
+
+  int n;
+  cin >> n;
+
+  for(int i=0; i<n; i++) {
+    string str;
+    cin >> str;
+
+    if(check(str)) {
+      cout << "YES" << endl;
+    } else {
+      cout << "NO" << endl;
+    }
+  }
+
+  return 0;
+}
+
+
+// 스택 이용안함(틀렸다고 나옴^^;;)
+//#include <cstdio>
+#include <iostream>
+#include <string>
+#define MAX 50
+
+using namespace std;
 
 int main() {
+  int T;
+  cin>>T;
 
+  for(int i=0; i<T; i++) {
+    string ps;  // 괄호 문자열
+    int sum = 0;  // '(': 1, ')': -1
+    cin >> ps;  // 입력
+
+    int len = (int)ps.length();
+
+    if(len%2 == 1) {
+      puts("NO");
+      continue;
+    }
+
+    for(int j=0; j<len; j++) {
+
+      if (sum < 0) {
+        puts("NO");
+        break;
+      }
+
+      if(ps[j] == '(') {
+        sum++;
+      } else {
+        sum--;
+      }
+    }
+
+    if (sum == 0) {
+      puts("YES");
+    } else {
+      puts("NO");
+    }
+ }
+
+  return 0;
 }
 ```
 
 
-### 2504  괄호의 값
+### 2504  괄호의 값 [##]
 스택을 사용해, 주어진 문자열이 올바른 괄호열인지 판단하고, 그 괄호열의 값을 출력하는 문제
 
 #### 문제
@@ -6144,16 +6277,129 @@ Olympiad > 한국정보올림피아드시․도지역본선 > 지역본선 2008 
 #### 보기
 
 #### 메모
+- 문제 이해, 스택 개념 응용 [!]
+- [백준 2504번 괄호의 값](http://mygumi.tistory.com/175)
+- [BOJ 백준 2504번 괄호의 값](http://ksh-code.tistory.com/83)
 
 #### 풀이
 ```c++
 // [[c++]]
 
+//런타임에러!!!
 #include <cstdio>
+#include <stack>
+using namespace std;
+
+int sum, tmp = 1;  // sum=0: 출력 score, tmp=1: 부분 score
+char str[33];  // 배열 제한 크기: 30
+stack<char> stk;  // 괄호, score 저장 stack
+
+int main() {
+  scanf("%s", str + 1);  // 입력
+
+  for (int i = 1; str[i]; i++) {  // str[i] == '\0'이면 for 종료
+    switch (str[i]) {
+      case '(':
+        tmp *= 2;  // 괄호 중첩시 마다 *2
+        stk.push('(');  //push
+        break;
+      case '[':
+        tmp *= 3;  // 괄호 중첩시 마다 *2
+        stk.push('[');  //push
+        break;
+      case ')':
+        if (str[i - 1] == '(') sum += tmp;  //점수 계산
+        if (stk.top() == '(') stk.pop();  //pop
+        tmp /= 2;  // 괄호 해제(한쌍 소멸)시 마다 /2
+        break;
+      case ']':
+        if (str[i - 1] == '[') sum += tmp;  //점수 계산
+        if (stk.top() == '[') stk.pop();  //pop
+        tmp /= 3;  // 괄호 해제(한쌍 소멸)시 마다 /3
+    }
+  }
+
+  printf("%d", stk.empty() ? sum : 0);  // 올바르지 않은 괄호 확인/출력
+
+  return 0;
+}
+
+
+
+//런타임 에러!!
+#include <iostream>
+#include <string>
+#include <stack>
+
+using namespace std;
+
+int stkInnerLoop(stack<int> &stk, int s1, int s2, int mul);
+
+int intP[4] = {40, 41, 91, 93}; // '(', ')', '[', ']' ascii code 값
 
 int main() {
 
+  stack<int> stk;  // 괄호, ans(점수) 저장용 stack
+  int ans = 0;  // 출력값(괄호 한쌍 점수 합계)
+  string input;  // 입력값(괄호 문자열)
+  cin >> input;  // 입력
+
+  int len = (int)input.length();  // 입력 개수
+
+  for (int i=0; i<len; i++) {  // stk에 괄호/ans push, pop
+    if (input[i] == '(' || input[i] == '[') {
+      stk.push(-(int)input[i]);
+    } else {  // 닫는 괄호
+      if (input[i] == ')') {  // 닫는 괄호: ')'
+        if (stk.top() == -intP[0]) { // '(', ')' 한쌍을 이루는 경우
+          stk.pop();
+          stk.push(2);
+        } else { // '(', ')' 내부에 다른 괄호가 있었던 경우(stk.top(): 숫자)
+          ans = stkInnerLoop(stk, -intP[2], -intP[0], 2);  // '(X)' : *2
+        }
+      } else { // 닫는 괄호: ']'
+        if (stk.top() == -intP[2]) {
+          stk.pop();
+          stk.push(3);
+        } else {
+          ans = stkInnerLoop(stk, -intP[0], -intP[2], 3);  // '[X]' : *3
+        }
+      }
+    }
+  }
+
+  //숫자만 남은 stk pop
+  while(!stk.empty()) {
+    ans += stk.top();
+    stk.pop();
+  }
+
+  cout << ans << endl;
+
 }
+
+
+int stkInnerLoop(stack<int> &stk, int s1, int s2, int mul) {
+  int result = 0;
+  int top = 0;
+  while (!stk.empty()) {  // stack이 빌 때까지
+    top = stk.top();
+    if (top == s1) {  // 괄호가 쌍을 이루지 못함
+      return -1;
+    } else if (top == s2) {  // 괄호가 쌍을 이룸, while문 종료(break)
+      stk.pop();
+      result *= mul;
+      stk.push(result);  // result * mul & push
+      break;
+    } else {  // top: 숫자
+      result += top;  // result + top & pop
+      stk.pop();
+    }
+  }
+
+  return result;
+}
+
 ```
 
 
@@ -6230,15 +6476,72 @@ front
 #### 보기
 
 #### 메모
+- [백준 10845 큐 (C, C++ Queue)](http://blockdmask.tistory.com/119)
 
 #### 풀이
 ```c++
 // [[c++]]
 
-#include <cstdio>
+#include <iostream>
+#include <queue>
+#include <string>
 
-int main() {
+using namespace std;
 
+int main(void) {
+
+  int N;
+  cin >> N;
+
+  queue<int> q;
+  int num;
+
+  for(int i=0; i<N; i++) {
+    string str;
+    cin >> str;
+
+    if(str == "push") {
+      int data;
+      cin >> data;
+      q.push(data);
+
+    } else if(str == "pop") {
+
+      if(q.size() != 0) {
+        num = q.front();
+        q.pop();
+      } else {
+        num = -1;
+      }
+      cout << num << endl;
+
+    } else if(str == "size") {
+      cout << q.size() << endl;
+
+    } else if(str == "empty") {
+      if(q.size() == 0) num =1;
+      else num =0;
+      cout << num << endl;
+
+    } else if(str == "front") {
+      if(q.size() == 0) {
+        num = -1;
+      } else {
+        num = q.front();
+      }
+      cout << num << endl;
+
+    } else if(str == "back") {
+      if(q.size() == 0) {
+        num = -1;
+      } else {
+        num = q.back();
+      }
+      cout << num << endl;
+    }
+
+  }
+  return 0;
 }
 ```
 
