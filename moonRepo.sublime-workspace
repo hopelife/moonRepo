@@ -57,17 +57,39 @@
 			"file": "_doing/learning/language/cpp/input.cpp",
 			"settings":
 			{
-				"buffer_size": 109,
+				"buffer_size": 105,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "#include <stdio>"
 			}
 		},
 		{
-			"file": "_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm/002_SelectionSort.cpp",
+			"contents": "#include <stdio.h>\n\nint main(void) {\n\tint i, j, temp;\n\tint array[10] = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};\n\tfor(i = 0; i < 10; i++) {\n\t\tfor(j = i; j < 9; j++) {\n\t\t\tif(array[j] > array[j + 1]) {\n\t\t\t\ttemp = array[j];\n\t\t\t\tarray[j] = array[j + 1];\n\t\t\t\tarray[j + 1] = temp;\n\t\t\t}\n\t\t}\n\t}\n\tfor(i = 0; i < 10; i++) {\n\t\tprintf(\"%d \", array[i]);\n\t}\n\treturn 0;\n}",
+			"file": "_doing/learning/language/cpp/003_BubbleSort_.cpp",
+			"file_size": 354,
+			"file_write_time": 131697392660452827,
 			"settings":
 			{
-				"buffer_size": 478,
+				"buffer_size": 347,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm/002_SelectionSort_.cpp",
+			"settings":
+			{
+				"buffer_size": 505,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm/003_BubbleSort_.cpp",
+			"settings":
+			{
+				"buffer_size": 349,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -80,23 +102,101 @@
 			}
 		},
 		{
-			"file": "/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/nodejs.sublime-build",
+			"file": "/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/python.sublime-build",
 			"settings":
 			{
-				"buffer_size": 75,
+				"buffer_size": 207,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "untitled.sublime-build"
 			}
 		},
 		{
+			"contents": "#!/bin/sh\nosascript -e '\n  on run parameters\n    tell application \"terminal\"\n      activate\n      do script with command \"python \" & parameters\n    end tell\n  end run\n' $@\n",
+			"file": "_doing/learning/language/sublime_python.sh",
+			"file_size": 172,
+			"file_write_time": 131697368894043686,
+			"settings":
+			{
+				"buffer_size": 172,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/*\ncrawler ver0.01\n\nusage: node crawler {default = crawl_opts.json}\n=> crawl_opts.json은 download폴더에 저장해 두었다가 crawling 시에 crawler.js 폴더에 이동하여 사용\n\n\n## iconv 설치\n$ npm install --global --production windows-build-tools\n$ npm install --global node-gyp\n$ npm install iconv\n*/\n\nvar request = require('request');\nvar cheerio = require('cheerio');\nvar Iconv  = require('iconv').Iconv;\nvar fs = require('fs');\nvar URL = require('url');\nvar opts = require('./crawl_opts.json');\n\nvar delay_req = opts.delay_req;\nvar path = __dirname + opts.path.dir;\nvar file = path + '/' + opts.path.file;\nvar path_img = path + '/' + opts.path.img;\nvar urls = opts.urls;\nvar sectors = opts.wraper.main;\nvar removes = opts.wraper.remove;\nvar rep_in = opts.replace.in;\nvar rep_out = opts.replace.out;\nvar len = rep_in.length;\n//console.log('path : ' + path);\n//console.log('file : ' + file);\n\n\nif (!fs.existsSync(path)){\n  fs.mkdirSync(path);\n}\n\nif (!fs.existsSync(path_img)){\n  fs.mkdirSync(path_img);\n}\n\nvar data1 = '';\nvar data = '';\nvar delay_write = delay_req*(urls.length + 2);\n\nasync function run() {\n  for(var k in urls) {\n    await sleep(delay_req);\n\n    requestOptions  = { method: \"GET\"\n      ,uri: urls[k]\n      ,headers: { \"User-Agent\": \"Mozilla/5.0\" }\n      ,encoding: 'binary'\n    };\n\n    request(requestOptions, function(err, res, html) {\n      var contentType = res.headers['content-type'];\n      var binaryHtml = new Buffer(html, 'binary');\n      var $ = cheerio.load(convertUTF8(binaryHtml, contentType));\n      //var $ = cheerio.load(html);\n\n      //data = $(\"article\").html();\n      var data = '';\n\n      //remove elements\n      //$('h2.field-label').remove();\n      for (var i in removes) {\n        $(removes[i]).remove();\n      }\n\n      //outer html\n      for (var i in sectors) {\n        data = data + $.html(sectors[i]);\n      }\n\n      //$ = cheerio.load(data);\n      //console.log('$', $('img'));\n      /*\n      //inner html\n      for (var i in sectors) {\n        data = data + $(sectors[i]).html();\n      }\n      */\n\n/*\n      //var bg = $(\".entry-header\").attr(\"background-image\");\n      var bg = $(\".entry-header\").attr(\"style\");\n      console.log('bg', bg);\n      if (bg != undefined) {\n        if (bg.match(/background/) && bg.match(/\\.png|\\.gif|\\.jpg|\\.bmp|\\.tiff/)) {\n*/\n//          bg = bg.replace(/.*\\s?url\\([\\'\\\"]?/, '').replace(/[\\'\\\"]?\\).*/, '');\n/*\n          var bgname = bg.replace(/.+\\/(.+)(png|jpg|gif)/, '$1$2');\n          console.log('bgname', bgname);\n          bgname = path_img + bgname;\n          request(bg).pipe(fs.createWriteStream(bgname));\n        }\n      }\n*/\n\n      //$(element).attr('href')\n      //bg = bg.replace(/.*\\s?url\\([\\'\\\"]?/, '').replace(/[\\'\\\"]?\\).*/, '');\n      //console.log('background-image', bg.replace(/.*\\s?url\\([\\'\\\"]?/, '').replace(/[\\'\\\"]?\\).*/, ''));\n\n/*\n      // img 링크 추출하여 각 링크에 대해 함수 수행\n      $(\"img\").each(function(idx) {\n        var src = $(this).attr('src');\n        //console.log('original image url : ', src);\n\n        // 상대경로를 절대경로로 변환\n        src = URL.resolve(urls[k], src);\n        //console.log('modified image url : ', src);\n\n        //확장자가 없으면 / png, gif, jpg, bmp, tiff가 아니면 다운로드 받지 않음\n        // str.indexOf('foo') != -1\n        // ( str.match(/foo/))\n\n        if (src.match(/\\.png|\\.gif|\\.jpg|\\.bmp|\\.tiff/)) {\n          // 저장 파일 이름 결정\n          //var fname = URL.parse(src).pathname;\n          var arr_path = URL.parse(src).pathname.split('/');\n          var fname = arr_path[arr_path.length-1];\n          //fname = path_img + fname.replace(/[^a-zA-Z0-9\\.]+/g, '_');\n          //fname = path_img + fname.replace(/[^a-zA-Z0-9\\.\\-]+/g, '_');\n          //fname = path_img + fname;\n          //console.log('fname : ', fname);\n\n          // 다운로드\n          request(src).pipe(fs.createWriteStream(fname));\n        }\n\n      });\n*/\n      //외부 링크 이미지 다운로드@@@\n      //https://gallery.mailchimp.com/89b8a31071f94ebc724a234b3/images/ada2a13a-a12b-4243-b368-e28ed0af97f8.gif\n\n      //백그라운드 이미지 다운로드@@@\n      //style=\"background-image: url(https://technicianapp.com/content/themes/technician-2/img/banner-bg-one.jpg);\n      //var bg = $(\"div\").css(\"background-image\");\n\n\n      //text replace@@@\n\n      for(i=0;i<len;i++) {\n        var sOld = new RegExp(rep_in[i], 'gi');\n        if (data.match(sOld)) {\n          data = data.replace(sOld, rep_out[i]);\n        }\n      }\n\n      data1 = data1 + data + '<hr>';\n      //console.log('data1:', data1);\n\n    });\n  }\n}\n\nrun();\n\nsetTimeout(write, delay_write);\n\n\nfunction sleep(period){\n  return new Promise(resolve => setTimeout(() => resolve(), period));\n}\n\n\nfunction convertUTF8(html, contentType) {\n  var $ = cheerio.load(html.toString()),\n  iconv = new Iconv('EUC-KR', 'UTF-8//TRANSLIT//IGNORE');\n  var charset = $('meta[http-equiv=\"Content-Type\"]').attr('content') || contentType;\n  if (charset && charset.toUpperCase().indexOf('EUC-KR') > -1) {\n  return iconv.convert(html);\n  }\n  return html;\n}\n\n\nfunction write() {\n  fs.writeFile(file, data1, function(err) {\n    if (err) {\n      console.log('file write err!!!');\n    } else {\n      //console.log('\\nwrited it!!!\\n' + data);\n    }\n  });\n}\n",
+			"settings":
+			{
+				"buffer_size": 5090,
+				"line_ending": "Unix",
+				"name": "/*"
+			}
+		},
+		{
+			"file": "_doing/learning/language/nodejs/crawl_img.js",
+			"settings":
+			{
+				"buffer_size": 1986,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "/*"
+			}
+		},
+		{
+			"file": "/Volumes/data/dev/nodejs/_apps/crawl/crawl_img.js",
+			"settings":
+			{
+				"buffer_size": 2094,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<img src=\"https://ie.bamtoki.com/582c6573038cc.jpg\" alt=\"퍼펙트 하프 1화 - 늑대와 여우 웹툰 이미지 1\">",
+			"settings":
+			{
+				"buffer_size": 86,
+				"line_ending": "Unix",
+				"name": "<img src=\"https://ie.bamtoki.com/582c6573038cc.jpg"
+			}
+		},
+		{
+			"file": "_doing/learning/language/nodejs/crawl_opts.json",
+			"settings":
+			{
+				"buffer_size": 367,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "text = raw_input(\"input: \")\nprint(text)",
+			"file": "_doing/learning/language/python/input.py",
+			"file_size": 39,
+			"file_write_time": 131697279083725557,
+			"settings":
+			{
+				"buffer_size": 39,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/cpp.sublime-build",
 			"settings":
 			{
-				"buffer_size": 353,
+				"buffer_size": 384,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "untitled.sublime-build"
+			}
+		},
+		{
+			"file": "_doing/learning/language/cpp/input",
+			"settings":
+			{
+				"buffer_size": 21200,
+				"encoding": "Hexadecimal",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -176,7 +276,7 @@
 			]
 		]
 	],
-	"build_varint": "Run",
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 59.0,
@@ -218,24 +318,21 @@
 		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning",
 		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language",
 		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/cpp",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/cpp/blog_naver_com_ndb796",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/nodejs",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/python",
 		"/Users/macmini/Apps/github/data/moonRepo/_done",
 		"/Users/macmini/Apps/github/data/moonRepo/_meta",
-		"/Users/macmini/Apps/github/data/moonRepo/_meta/guide",
-		"/Users/macmini/Apps/github/site",
-		"/Users/macmini/Apps/github/site/test",
-		"/Users/macmini/Apps/github/site/test/_includes",
-		"/Users/macmini/Apps/github/site/test/_layouts",
-		"/Users/macmini/Apps/github/site/test/_posts",
-		"/Users/macmini/Apps/github/site/test/_site",
-		"/Users/macmini/Apps/github/site/test/_site/2018",
-		"/Users/macmini/Apps/github/site/test/_site/2018/03",
-		"/Users/macmini/Apps/github/site/test/_site/2018/03/31",
-		"/Users/macmini/Apps/github/site/test/_site/2018/03/31/md_latex",
-		"/Users/macmini/Apps/github/site/test/_site/2018/03/31/md_mermaid"
+		"/Users/macmini/Apps/github/data/moonRepo/_meta/guide"
 	],
 	"file_history":
 	[
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm/004_InsertionSort_.cpp",
+		"/Volumes/data/lecture/inflearn/C++ 로 배우는 자료구조와 알고리즘/source/Week2/sort/SelectionSort.h",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/cpp/003_BubbleSort_.cpp",
 		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/cpp/input",
+		"/Users/macmini/Apps/github/data/moonRepo/_doing/learning/language/test.sh",
 		"/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/nodejs.sublime-build",
 		"/Users/macmini/Apps/github/data/moonRepo/_doing/cpp/blog_naver_com_ndb796/2018_algorithm/001_SelectionSort.cpp",
 		"/Users/macmini/Apps/github/data/moonRepo/_doing/nodejs/hello.js",
@@ -282,6 +379,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"    ",
+			"^ +$",
+			"\\n+",
+			"min",
 			"    ",
 			"}```",
 			"\\{\\n\\n\\}\\n```",
@@ -405,11 +506,7 @@
 			"    ",
 			"scanf",
 			"{0,",
-			"n/pow(10, i)",
-			" ;",
-			"\\\\([A-Z])",
-			"Shell",
-			" *\\$\\$ *"
+			"n/pow(10, i)"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -417,6 +514,10 @@
 		"regex": true,
 		"replace_history":
 		[
+			"  ",
+			"",
+			"\\n",
+			"max",
 			"  ",
 			"}\\n```",
 			"{\\n  \\n\\n  return 0;\\n}```",
@@ -540,11 +641,7 @@
 			"\\n\\n|   |   |\\n|---|---|\\n|",
 			"---  ",
 			"   ",
-			"\\n| 기능\\1\\n|---|---|---|",
-			"\\n| 기능\\1\\n|---|---|---|\\n",
-			"\\n|   |   |   |\\n|---|---|---|\\n| 기능",
-			"\\n",
-			"\\n| \\1 | ``\\2`` | \\$\\$\\4\\$\\$"
+			"\\n| 기능\\1\\n|---|---|---|"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -555,7 +652,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 15,
 			"sheets":
 			[
 				{
@@ -577,13 +674,14 @@
 						"settings":
 						{
 							"auto_name": "## nas",
+							"is_init_dirty_state": true,
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -605,13 +703,14 @@
 						"settings":
 						{
 							"auto_name": "## IT(Information Technology)",
+							"is_init_dirty_state": true,
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -633,13 +732,15 @@
 						],
 						"settings":
 						{
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
@@ -661,6 +762,8 @@
 						],
 						"settings":
 						{
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -669,7 +772,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
@@ -692,13 +795,14 @@
 						"settings":
 						{
 							"auto_name": "print('Hello Python')",
+							"is_init_dirty_state": false,
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -707,44 +811,45 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 109,
+						"buffer_size": 105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109,
-								109
+								10,
+								10
 							]
 						],
 						"settings":
 						{
 							"auto_name": "#include <stdio>",
+							"is_init_dirty_state": false,
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm/002_SelectionSort.cpp",
+					"file": "_doing/learning/language/cpp/003_BubbleSort_.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 478,
+						"buffer_size": 347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								478
+								347,
+								347
 							]
 						],
 						"settings":
@@ -757,11 +862,72 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
+					"file": "_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm/002_SelectionSort_.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								393,
+								393
+							]
+						],
+						"settings":
+						{
+							"is_init_dirty_state": false,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "_doing/learning/language/cpp/blog_naver_com_ndb796/2018_algorithm/003_BubbleSort_.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								148,
+								148
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 97.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "_doing/learning/language/nodejs/hello.js",
 					"semi_transient": false,
 					"settings":
@@ -779,6 +945,7 @@
 						],
 						"settings":
 						{
+							"is_init_dirty_state": false,
 							"origin_encoding": "ASCII",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
@@ -786,29 +953,58 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/nodejs.sublime-build",
+					"buffer": 10,
+					"file": "/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/python.sublime-build",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 75,
+						"buffer_size": 207,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								74,
-								74
+								207,
+								207
 							]
 						],
 						"settings":
 						{
+							"is_init_dirty_state": false,
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "_doing/learning/language/sublime_python.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -818,33 +1014,240 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/cpp.sublime-build",
+					"buffer": 12,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 353,
+						"buffer_size": 5090,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								241,
-								241
+								0,
+								5090
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/*",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "_doing/learning/language/nodejs/crawl_img.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1986,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1390,
+								1390
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/*",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1541.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/Volumes/data/dev/nodejs/_apps/crawl/crawl_img.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1179,
+								1179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1425.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 86,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10,
+								50
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<img src=\"https://ie.bamtoki.com/582c6573038cc.jpg",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "_doing/learning/language/nodejs/crawl_opts.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								367
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "_doing/learning/language/python/input.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 39,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/Users/macmini/Library/Application Support/Sublime Text 3/Packages/User/cpp.sublime-build",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								335,
+								335
+							]
+						],
+						"settings":
+						{
+							"is_init_dirty_state": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 112.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "_doing/learning/language/cpp/input",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -883,13 +1286,13 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 474.0
+		"height": 363.0
 	},
 	"output.find_results":
 	{
 		"height": 204.0
 	},
-	"pinned_build_system": "Packages/User/cpp.sublime-build",
+	"pinned_build_system": "",
 	"project": "moonRepo.sublime-project",
 	"replace":
 	{
